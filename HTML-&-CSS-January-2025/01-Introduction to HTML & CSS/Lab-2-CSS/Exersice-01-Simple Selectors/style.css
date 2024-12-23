@@ -1,0 +1,27 @@
+* h1,
+h2 {
+  color: royalblue;
+}
+p {
+  font-size: 1.5rem;
+}
+.highlight {
+  background-color: red;
+  width: 200px;
+}
+ul {
+  list-style-type: square;
+}
+li {
+  color: aquamarine;
+  font-style: italic;
+  text-decoration: underline;
+}
+#main-title {
+  color: black;
+}
+#special-paragraph {
+  font-style: italic;
+  font-size: 2rem;
+  color: green;
+}

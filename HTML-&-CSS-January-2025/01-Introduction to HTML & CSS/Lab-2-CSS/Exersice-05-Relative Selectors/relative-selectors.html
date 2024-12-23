@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS-Exercise-5</title>
+    <link rel="stylesheet" href="relative-selectors.css" />
+  </head>
+  <body>
+    <!-- Section with descendant selector -->
+    <section>
+      <p>This paragraph is a direct descendant of a section.</p>
+      <article>
+        <p>This paragraph is within an article inside a section.</p>
+      </article>
+    </section>
+
+    <!-- Highlighted article -->
+    <article class="highlight">
+      <p>This paragraph is within a highlighted article.</p>
+    </article>
+
+    <!-- Adjacent sibling article -->
+    <article>
+      <p>This paragraph is in an article following a highlighted article.</p>
+    </article>
+
+    <!-- Unordered list with nested links -->
+    <ul>
+      <li><strong>List Item 1</strong></li>
+      <li><strong>List Item 2</strong></li>
+      <li><strong>List Item 3</strong></li>
+      <li>
+        <strong>List Item 4 with links:</strong>
+        <ul>
+          <li><a href="#">Link 1</a></li>
+          <li><a href="#">Link 2</a></li>
+          <li><a href="#">Link 3</a></li>
+        </ul>
+      </li>
+    </ul>
+
+    <!-- Heading with sibling paragraphs -->
+    <h2><strong>Siblings following this h2 are styled</strong></h2>
+    <p>A sibling paragraph.</p>
+    <p>Another sibling paragraph.</p>
+  </body>
+</html>

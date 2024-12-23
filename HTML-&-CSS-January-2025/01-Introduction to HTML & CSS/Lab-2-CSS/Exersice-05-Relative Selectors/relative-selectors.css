@@ -1,0 +1,47 @@
+/* Descendant Selector: Style <p> elements within <section> */
+section p {
+  font-size: medium;
+}
+
+/* Child Selector: Style <li> elements that are direct children of a <ul> */
+ul > li {
+  color: black;
+  font-weight: bold;
+  list-style-type: none;
+}
+
+/* Specific style for the second <li> in the parent list */
+ul > li:nth-child(2) {
+  color: red;
+}
+
+/* Adjacent Sibling Selector: Style <article> that immediately follows another <article> */
+article + article {
+  background-color: #f08080; /* Light red background */
+}
+
+/* General Sibling Selector: Style <p> elements that are siblings following a specific <h2> */
+h2 ~ p {
+  color: blue;
+  font-style: italic;
+}
+
+/* Nested List Links */
+/* First link inside the first nested <li> */
+ul > li > ul > li:nth-child(1) a {
+  color: blue;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* Second link inside the second nested <li> */
+ul > li > ul > li:nth-child(2) a {
+  color: blue;
+  text-decoration: none;
+}
+
+/* Third link inside the third nested <li> */
+ul > li > ul > li:nth-child(3) a {
+  color: green;
+  font-weight: bold;
+}

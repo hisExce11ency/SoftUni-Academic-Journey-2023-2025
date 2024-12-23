@@ -1,0 +1,70 @@
+/* Descendant Selector: Links inside nav are styled differently */
+/* Style the list items (li) to always have black text */
+ul li {
+  color: black; /* Ensures list item text is black */
+}
+
+/* Remove underline from all links inside the list */
+ul li a {
+  text-decoration: none; /* Removes underline */
+  color: blue;
+}
+
+/* Special style for active links */
+nav a.active {
+  color: darkblue; /* Override color for active links */
+  font-weight: bold;
+}
+
+/* Child Combinator: Direct children <section> inside .services */
+div.description > p {
+  background-color: lightblue;
+  padding: 5px;
+}
+
+/* Adjacent Sibling Selector: Header immediately after a section */
+.services + header {
+  border-top: 2px solid black;
+}
+
+/* General Sibling Selector: Any <article> after .additional-info */
+.additional-info ~ article {
+  font-style: italic;
+  color: darkgreen;
+}
+
+/* Attribute Selector: Input of type text inside a form */
+form.input-form input[type="text"] {
+  border: 2px solid gray;
+  padding: 8px;
+  border-radius: 5px;
+}
+
+/* Pseudo-class Selector: First and Last Child */
+ul li:first-child {
+  font-weight: bold;
+}
+
+ul li:last-child {
+  font-style: italic;
+}
+
+/* Pseudo-element Selector: Add decorative text */
+h2::before {
+  content: ">> ";
+  color: brown;
+  font-weight: bold;
+}
+
+h2::after {
+  content: " <<";
+  color: brown;
+  font-weight: bold;
+}
+
+/* Highlighted Image */
+img.highlight {
+  border: 5px solid red;
+  width: 200px;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+}

@@ -1,0 +1,23 @@
+/* descendant combinator */
+div p {
+  color: royalblue;
+}
+
+p span {
+  color: red;
+}
+/* child combinator  */
+ul > li {
+  list-style-type: circle;
+  color: black;
+  font-weight: normal;
+}
+/* adjacent sibling combinator  */
+p + p {
+  background-color: rgb(180, 177, 177);
+}
+/* general sibling combinator */
+p ~ span {
+  color: red;
+  font-weight: bold;
+}
