@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Exercise-06-Blog layout</title>
+        <link rel="stylesheet" href="blog-layout-styles.css" />
+    </head>
+    <body>
+        <header class="blog-header">
+            <h1>My Simple Blog</h1>
+            <nav class="blog-nav">
+                <ul class="">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <article class="blog-post">
+                <h2>Blog Post Title</h2>
+                <p>
+                    <time datetime="2024-01-24">January 24, 2024</time>by
+                    <span class="author">Author Name</span>
+                </p>
+
+                <p class="summary">
+                    This is the introduction of your blog post...
+                </p>
+
+                <a href="#read-more">Read more...</a>
+            </article>
+        </main>
+        <aside>
+            <section class="widget">
+                <h3>About Me</h3>
+                <p>Short bio or description about the blog author.</p>
+            </section>
+            <section class="widget">
+                <h3>Categories</h3>
+                <nav class="blog-sidebar-nav">
+                    <ul class="nav-links-sidebar">
+                        <li><a href="#">Web Design</a></li>
+                        <li><a href="#">HTML</a></li>
+                        <li><a href="#">CSS</a></li>
+                    </ul>
+                </nav>
+            </section>
+            <section class="widget">
+                <h3>Recent Posts</h3>
+                <nav class="blog-sidebar-nav">
+                    <ul class="nav-links-sidebar">
+                        <li><a href="#">Post 1</a></li>
+                        <li><a href="#">Post 2</a></li>
+                        <li><a href="#">Post 3</a></li>
+                    </ul>
+                </nav>
+            </section>
+            <section class="widget">
+                <h3>Social Media links</h3>
+                <nav class="blog-sidebar-nav">
+                    <ul class="nav-links-sidebar">
+                        <li><a href="#">Fb</a></li>
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">LinkedIn</a></li>
+                    </ul>
+                </nav>
+            </section>
+        </aside>
+        <footer>
+            <p>&copy; 2024 My Simple Blog. All rights reserved.</p>
+            <nav class="footer-nav">
+                <ul class="nav-links-footer">
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms and Conditions</a></li>
+                    <li><a href="#">Cookie Policy</a></li>
+                </ul>
+            </nav>
+        </footer>
+    </body>
+</html>

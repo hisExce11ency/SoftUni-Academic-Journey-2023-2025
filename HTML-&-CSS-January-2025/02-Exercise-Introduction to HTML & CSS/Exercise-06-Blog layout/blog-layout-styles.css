@@ -1,0 +1,12 @@
+nav {
+    background-color: red;
+}
+aside nav,
+aside nav a {
+    background-color: blue;
+    color: white;
+}
+footer li > a,
+header nav a {
+    text-decoration: wavy;
+}

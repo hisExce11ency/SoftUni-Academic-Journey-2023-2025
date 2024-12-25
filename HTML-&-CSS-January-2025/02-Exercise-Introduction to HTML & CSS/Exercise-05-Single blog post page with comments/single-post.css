@@ -1,0 +1,13 @@
+span.author {
+    font-weight: bold;
+}
+.post-comments {
+    background: rgba(163, 161, 161, 0.913);
+    color: white;
+    width: 400px;
+}
+
+blockquote {
+    text-decoration: underline;
+    font-style: italic;
+}

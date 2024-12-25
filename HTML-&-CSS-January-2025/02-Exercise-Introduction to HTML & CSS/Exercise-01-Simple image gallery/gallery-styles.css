@@ -1,0 +1,36 @@
+/* Style the gallery container */
+.gallery-container {
+    display: grid; /* Use CSS Grid for layout */
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(150px, 1fr)
+    ); /* Dynamic columns */
+    gap: 10px; /* Spacing between grid items */
+    max-width: 1000px; /* Limit container width */
+    margin: 0 auto; /* Center the gallery horizontally */
+    padding: 10px; /* Padding around the container */
+    border: 1px solid black; /* Optional border */
+}
+
+/* Style each image */
+.image {
+    width: 100%; /* Scale image to fill grid cell */
+    height: 150px; /* Set fixed height */
+    object-fit: cover; /* Crop images to fill dimensions without stretching */
+    border-radius: 5px; /* Optional rounded corners */
+    transition: transform 0.3s ease; /* Smooth hover effect */
+}
+
+/* Hover effect for images */
+.image:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+    cursor: pointer;
+}
+
+/* Ensure the container adapts responsively */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
