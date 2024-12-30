@@ -1,0 +1,27 @@
+html {
+    box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+div {
+    border: 2px solid black;
+    margin-bottom: 20px;
+    height: 310px;
+}
+div.fixed {
+    height: 200px;
+}
+div.percentage {
+    height: 50%;
+}
+div.viewport {
+    height: 50vh;
+}
+div.min-max {
+    min-height: 100px;
+    max-height: 300px;
+}
