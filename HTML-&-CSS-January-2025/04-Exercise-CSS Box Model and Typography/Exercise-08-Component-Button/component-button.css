@@ -1,0 +1,63 @@
+body {
+    padding: 20px;
+    margin: 0px;
+    font-family: "Lato", sans-serif;
+    color: #333;
+}
+
+a,
+button {
+    font-family: inherit;
+    color: inherit;
+    text-decoration: none;
+}
+
+h2 {
+    font-size: 1.5em;
+    margin: 0;
+}
+.button {
+    display: inline-block;
+    background: #cfcfcf;
+    border-radius: 5px;
+    padding: 15px;
+    text-align: center;
+    font-size: 1em;
+    margin: 20px 5px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+}
+
+.button:focus,
+.button:hover {
+    color: #fff;
+    background: #000;
+}
+
+.button:active {
+    background: #060;
+}
+.button:first-of-type {
+    margin-left: 0;
+}
+.primary {
+    background: orange;
+}
+.primary:hover {
+    background: darkorange;
+    color: #fff;
+}
+.secondary {
+    background: lightyellow;
+}
+.secondary:hover {
+    background-color: lightblue;
+    color: #333;
+}
+.outline {
+    background: transparent;
+}
+.outline:hover {
+    background: #eee;
+    color: #333;
+}

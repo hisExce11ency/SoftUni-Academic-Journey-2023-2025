@@ -1,0 +1,33 @@
+body {
+    padding: 20px;
+    margin: 0px;
+    font-family: "Lato", sans-serif;
+}
+
+.social-media-icons {
+    display: block;
+    padding: 0;
+    margin: 0;
+}
+.social-media-icons li {
+    display: inline-block;
+    margin-right: 10px;
+}
+.social-media-icons li a {
+    font-size: 24px;
+    display: block;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    aspect-ratio: 1/1;
+    text-align: center;
+    align-content: center;
+    background-color: #eee;
+    border-radius: 50%;
+    color: #000;
+    text-decoration: none;
+}
+.social-media-icons li a:hover {
+    background-color: #ccc;
+    color: #fff;
+}

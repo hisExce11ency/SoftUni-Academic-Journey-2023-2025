@@ -1,0 +1,30 @@
+.outline-green {
+    border: 2px solid green;
+    margin: 0;
+    padding: 40px 0;
+}
+.main-blue {
+    border: 2px solid blue;
+    padding: 40px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.main-blue > header,
+.main-blue > main,
+.main-blue > footer {
+    border: 2px solid black;
+    text-align: center;
+    font-size: medium;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    padding: 40px;
+}
+.main-blue > header,
+.main-blue > main {
+    margin-bottom: 40px;
+}
+
+.main-blue h1 {
+    font-size: 1rem;
+}

@@ -1,0 +1,44 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Lato", sans-serif;
+    padding: 2em;
+}
+p {
+    padding-bottom: 1em;
+}
+
+.accordion-container {
+    width: 70%;
+    margin: 0px auto;
+}
+.accordion-container details {
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-bottom: 0;
+}
+.accordion-container details:last-child {
+    border: 1px solid #ccc;
+}
+.accordion-container summary {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+.accordion-container details summary::before {
+    display: inline-block;
+    content: ">";
+    margin-right: 10px;
+}
+.accordion-container details[open] summary {
+    padding-bottom: 20px;
+}
+.accordion-container details[open] summary::before {
+    content: "^";
+    transform: rotate(180deg);
+}

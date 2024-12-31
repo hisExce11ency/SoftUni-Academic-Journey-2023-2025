@@ -1,0 +1,48 @@
+html {
+    font-family: "Lato", sans-serif !important;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: inherit !important;
+}
+
+body {
+    padding: 2em;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+.blog-post {
+    border: 1px solid #ccc;
+    padding: 1.5em 2em;
+    border-radius: 0.3em;
+    color: #333;
+}
+
+.blog-post h2 {
+    margin-top: 0;
+    font-size: 2.2em;
+}
+.blog-post h3 {
+    font-size: 1.8em;
+}
+.blog-post section p:first-child {
+    font-size: 1.2em;
+    font-weight: 400;
+    color: #111;
+}
+
+.blog-post footer {
+    font-style: italic;
+}
+.blog-post time {
+    font-weight: bold;
+}
