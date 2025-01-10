@@ -1,0 +1,45 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap");
+
+@media all {
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        padding: 2em;
+        font: 14px/1.5 Lato, sans-serif;
+    }
+    body::before {
+        display: block;
+        background: #369;
+        color: #fff;
+        padding: 1em 1.5em;
+        margin-bottom: 2em;
+        border-radius: 0.3em;
+    }
+
+    p {
+        padding-bottom: 1.5em;
+    }
+
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+}
+
+@media print {
+    body::before {
+        display: block;
+        content: "The page is being printed";
+    }
+}
+
+@media screen {
+    body::before {
+        display: block;
+        content: "The page is being shown on a screen";
+    }
+}
