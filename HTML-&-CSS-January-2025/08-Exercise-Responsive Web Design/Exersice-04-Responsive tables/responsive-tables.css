@@ -1,0 +1,92 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #eee;
+    font: 14px/1.5 "Lato", Grande, sans-serif;
+    padding: 2em;
+}
+
+table {
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 0.5em;
+    border-spacing: 0;
+    box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.1);
+    width: 100%;
+    margin-bottom: 2em;
+    overflow: hidden;
+}
+
+table th,
+table td {
+    padding: 0.8em 1em;
+    text-align: left;
+}
+table[data-title] {
+    padding-top: 5rem;
+    position: relative;
+}
+
+table:has([data-title]):before {
+    display: flex;
+    position: absolute;
+    padding: 0 1em;
+    font-weight: bold;
+    font-size: 1.6em;
+    content: attr(data-title);
+    align-items: center;
+    top: 0;
+    left: 0;
+    height: 5rem;
+}
+table thead th {
+    border: solid #ccc;
+    border-width: 1px 0;
+    background: #eee;
+}
+table tbody tr td {
+    border-bottom: 1px solid #ccc;
+}
+
+table tr:hover {
+    background: black;
+    color: #fff;
+    border-color: transparent;
+}
+
+@media (width < 800px) {
+    table {
+        display: block;
+    }
+    table thead {
+        display: none;
+    }
+    table tbody {
+        display: block;
+    }
+    table tbody tr {
+        display: block;
+        border: solid #000;
+        border-width: 2px 0 0 0;
+    }
+    table tbody td {
+        display: flex;
+        color: #666;
+    }
+    table tbody td:before {
+        display: block;
+        content: attr(data-title);
+        color: #000;
+        font-weight: bold;
+        flex: 0 1 40%;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+}

@@ -1,0 +1,81 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #eee;
+    font: 14px/1.5 Lato, sans-serif;
+    margin: 0;
+    padding: 4em 2em;
+}
+
+.site {
+    /* Option 2 */
+    max-width: 1100px;
+    margin: 0 auto;
+    /* Option 2 */
+
+    background: #fff;
+    padding: 2em;
+    border-radius: 0.3em;
+    box-shadow: 0 0 1em 0 rgb(0, 0, 0, 0.2);
+
+    /* Option 1 */
+    /* flex-direction: column; */
+    /* Option 1 */
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+}
+
+.site > * {
+    border: 1px solid #aaa;
+    padding: 1em;
+    border-radius: 0.3em;
+}
+
+.site-header,
+.site-footer {
+    flex: 1 0 100%;
+}
+
+/* OPTION 2 */
+
+main.site-main {
+    flex: 1 1 650px;
+}
+
+aside {
+    flex: 1 0 250px;
+}
+/* OPTION 2 */
+
+/* OPTION 1 */
+/* main.site-main {
+    flex: 1 0 60%;
+}
+
+aside {
+    flex: 0 0 30%;
+} */
+/* OPTION 1 */
+
+/* OPTION 1 -with media query */
+/* @media (min-width: 800px) {
+    .site {
+        flex-direction: row;
+    }
+} */
+
+/* OPTION 2- only with flex box */
+
+/* 
+900px
+650px - main
+250px - aside
+*/
