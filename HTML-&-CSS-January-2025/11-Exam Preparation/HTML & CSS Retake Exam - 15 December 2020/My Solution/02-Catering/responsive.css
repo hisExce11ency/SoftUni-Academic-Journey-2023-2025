@@ -1,0 +1,27 @@
+/* TODO: Add the responsive styles here */
+
+@media screen and (max-width: 600px) {
+    .w3-right.w3-hide-small {
+        display: none;
+    }
+    #about {
+        display: flex;
+        flex-direction: column;
+    }
+    #about img {
+        display: none;
+    }
+    #about article {
+        width: 100%;
+    }
+    #menu {
+        display: flex;
+        flex-direction: column;
+    }
+    #menu img {
+        display: 100%;
+    }
+    #menu article {
+        width: 100%;
+    }
+}
