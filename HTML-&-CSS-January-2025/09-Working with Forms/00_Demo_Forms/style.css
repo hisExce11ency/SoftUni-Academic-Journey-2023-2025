@@ -1,0 +1,230 @@
+/* import google font */
+
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css);
+
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+
+/* CSS Reset */
+* {
+    margin: 0;
+    padding: 0;
+}
+html {
+    box-sizing: border-box;
+    font: 14px/1.5 "Lato", sans-serif;
+    color: #333;
+}
+
+body,
+input,
+textarea,
+select,
+option,
+button {
+    font: inherit;
+}
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+/* CSS Reset */
+
+/* Lecture 09-Working with Forms-DEMO */
+body {
+    padding: 2em;
+    background: #eee;
+}
+
+form {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2em;
+    background: #fff;
+    border-radius: 0.5em;
+    box-shadow: 0 0 1em 0 rgb(0, 0, 0, 0.3);
+}
+
+form h2 {
+    margin-bottom: 1rem;
+}
+form ul li {
+    list-style: none outside;
+}
+
+fieldset {
+    border: 1px soloid #ccc;
+    padding: 2em;
+    border-radius: 0.5em;
+    margin-bottom: 2em;
+}
+fieldset legend {
+    padding: 0 1em;
+    margin-left: -1em;
+    font-weight: bold;
+}
+
+input[type="text"],
+.flabel label {
+    display: block;
+    width: 100%;
+}
+
+label {
+    font-weight: bold;
+}
+
+input[required] ~ label::after {
+    display: inline-block;
+    content: " *";
+    color: #c00;
+}
+
+select,
+textarea,
+input {
+    padding: 0.5em 0.8em;
+    border: 2px solid #ccc;
+    border-radius: 0.3em;
+    outline: none;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+    border-color: orange;
+    /* position: relative;
+    top: 2px; */
+}
+input[type="text"]:focus ~ label,
+input[type="email"]:focus ~ label,
+input[type="password"]:focus ~ label {
+    color: orange;
+}
+
+/* Old Syntax */
+/* input:invalid {
+    border-color: red;
+}
+
+input:valid {
+    border-color: green;
+} */
+
+/* New Syntax */
+
+input[type="text"]:user-invalid,
+input[type="email"]:user-invalid,
+input[type="password"]:user-invalid {
+    border-color: red;
+}
+input[type="text"]:user-invalid ~ label,
+input[type="text"]:user-invalid ~ .helper,
+input[type="email"]:user-invalid ~ label,
+input[type="email"]:user-invalid ~ .helper,
+input[type="password"]:user-invalid ~ label {
+    color: red;
+}
+
+input[type="text"]:user-invalid ~ .helper.error {
+    display: block;
+}
+
+input[type="text"]:user-valid,
+input[type="email"]:user-valid,
+input[type="password"]:user-valid {
+    border-color: #090;
+}
+input[type="text"]:user-valid ~ label,
+input[type="email"]:user-valid ~ label,
+input[type="password"]:user-valid ~ label {
+    color: #090;
+}
+
+input[type="text"]:user-valid ~ label::before,
+input[type="email"]:user-valid ~ label::before {
+    display: block;
+    content: "\f058";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    color: #090;
+    padding-top: 2em;
+    padding-right: 0.5em;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+input[type="email"]:user-invalid ~ label::before,
+input[type="password"]:user-invalid ~ label::before {
+    display: block;
+    content: "\f057";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    color: red;
+    padding-top: 2em;
+    padding-right: 0.5em;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+input[type="submit"] {
+    border-color: #ccc;
+}
+.Demo-1,
+.Demo-2 {
+    margin: 10px auto;
+    padding: 2em;
+    background: #c7c;
+    border-radius: 0.5em;
+}
+
+.Demo-1 input {
+    margin-bottom: 0.5em;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 1em;
+    position: relative;
+}
+.field label {
+    order: -1;
+}
+
+.field .helper {
+    font-size: 0.9em;
+    font-style: italic;
+    opacity: 0.6;
+    padding: 0.5em 0;
+}
+.field .helper.error {
+    display: none;
+}
+
+.field-radio,
+.field-checkbox {
+    padding: 1em;
+}
+
+.field-radio ul,
+.field-checkbox ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    border: 1px solid #ccc;
+    padding: 1em;
+    border-radius: 0.5em;
+}
+
+.field-radio ul li,
+.field-checkbox ul li {
+    flex: 1 1 120px;
+    display: flex;
+    align-items: center;
+}
+
+.field-radio ul li label,
+.field-checkbox ul li label {
+    padding: 0.5em;
+}

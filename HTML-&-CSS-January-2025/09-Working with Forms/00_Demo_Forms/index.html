@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Lecture 09-Working with Forms-DEMO</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <section>
+            <article class="Demo-1">
+                <form action="https://www.google.com/search" method="get">
+                    <label for="Search">Search</label>
+                    <input type="text" name="q" id="search" />
+                    <input type="text" name="priority" id="priority" />
+                    <input type="submit" value="Submit" />
+                </form>
+            </article>
+        </section>
+
+        <section>
+            <article class="Demo-2">
+                <form action="#" method="get">
+                    <h2>Registration</h2>
+
+                    <fieldset>
+                        <legend>Login Information</legend>
+
+                        <p class="field">
+                            <input
+                                type="email"
+                                name="register-email"
+                                id="register-email"
+                                placeholder="eg: Nicholas_Roerich@gmail.com"
+                                required
+                            />
+                            <label for="register-email">Email</label>
+                            <span class="helper info"
+                                >Enter your email adres</span
+                            >
+                        </p>
+                        <p class="field">
+                            <input
+                                type="password"
+                                name="register-password"
+                                id="register-password"
+                                required
+                            />
+                            <label for="register-password">Password</label>
+                        </p>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Personal Information</legend>
+                        <p class="field">
+                            <input
+                                type="text"
+                                name="register-first-name"
+                                id="first-name"
+                                minlength="2"
+                                required
+                            />
+                            <label for="register-first-name">First Name</label>
+
+                            <span class="helper error">
+                                First Name must be at least 2 charecters long
+                            </span>
+                        </p>
+                        <p class="field">
+                            <input
+                                type="text"
+                                name="register-last-name"
+                                id="last-name"
+                            />
+                            <label for="register-last-name">Last Name</label>
+                        </p>
+                        <p class="field">
+                            <textarea
+                                type="text"
+                                name="register-bio"
+                                id="bio"
+                            ></textarea>
+                            <label for="register-bio">Bio</label>
+                        </p>
+
+                        <p class="field">
+                            <select
+                                name="register-age-group"
+                                id="register-age-group"
+                            >
+                                <option selected>
+                                    Please select your age group
+                                </option>
+                                <option value="18-25">18-25</option>
+                                <option value="26-35">26-35</option>
+                                <option value="36-45">36-45</option>
+                                <option value="46-55">46-55</option>
+                            </select>
+
+                            <label for="register-age-group">Age Group </label>
+                        </p>
+                        <p class="field">
+                            <input
+                                type="checkbox"
+                                name="register-terms"
+                                id="register-terms"
+                            />
+                            <label for="register-terms">
+                                I accept the terms and conditions
+                            </label>
+                        </p>
+
+                        <div class="field-radio">
+                            <label>Age Group</label>
+                            <ul class="radio-group">
+                                <li>
+                                    <input
+                                        type="radio"
+                                        name="register-age-group-V2"
+                                        id="register-age-group-V2-o1"
+                                    />
+                                    <label for="register-age-group-V2-o1">
+                                        18-25
+                                    </label>
+                                </li>
+                                <li>
+                                    <input
+                                        type="radio"
+                                        name="register-age-group-V2"
+                                        id="register-age-group-V2-o2"
+                                    />
+                                    <label for="register-age-group-V2-o2">
+                                        26-35
+                                    </label>
+                                </li>
+                                <li>
+                                    <input
+                                        type="radio"
+                                        name="register-age-group-V2"
+                                        id="register-age-group-V2-o3"
+                                    />
+                                    <label for="register-age-group-V2-o3">
+                                        36-45
+                                    </label>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="field-checkbox">
+                            <label>Interests</label>
+                            <ul class="checkbox-group">
+                                <li>
+                                    <input
+                                        type="checkbox"
+                                        name="register-interests-o1"
+                                        id="register-interests-o1"
+                                    />
+                                    <label for="register-interests-o1">
+                                        Photography
+                                    </label>
+                                </li>
+                                <li>
+                                    <input
+                                        type="checkbox"
+                                        name="register-interests-o2"
+                                        id="register-interests-o2"
+                                    />
+                                    <label for="register-interests-o2">
+                                        Tehnology
+                                    </label>
+                                </li>
+                                <li>
+                                    <input
+                                        type="checkbox"
+                                        name="register-interests-o3"
+                                        id="register-interests-o3"
+                                    />
+                                    <label for="register-interests-o3">
+                                        Money
+                                    </label>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="firld-range">
+                            <label for=""></label>
+                            <input
+                                type="range"
+                                name="register-age-group-V3"
+                                id="register-age-group-V3"
+                                min="18"
+                                max="45"
+                                step="5"
+                            />
+                        </div>
+                    </fieldset>
+                    <input type="submit" value="Register" />
+                </form>
+            </article>
+        </section>
+    </body>
+</html>
