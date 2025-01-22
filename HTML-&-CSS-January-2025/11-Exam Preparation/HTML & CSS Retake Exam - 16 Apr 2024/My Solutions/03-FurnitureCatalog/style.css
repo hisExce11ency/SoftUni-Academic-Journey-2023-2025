@@ -1,0 +1,269 @@
+/* Import Google Fonts */
+@import url("https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i|PT+Serif:400,400i,700,700i&amp;display=swap");
+
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+html {
+    font: 15px/1.5 "PT Sans", sans-serif;
+    box-sizing: border-box;
+}
+
+body,
+input,
+button,
+textarea {
+    font: inherit;
+}
+
+h1 {
+    font-size: 3em;
+}
+h2 {
+    font-size: 3em;
+}
+h3 {
+    font-size: 2em;
+}
+h4 {
+    font-size: 1.8em;
+}
+h5 {
+    font-size: 1.4em;
+}
+h6 {
+    font-size: 1.2em;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    color: #111;
+}
+
+/* Components */
+.site-nav ul {
+    display: flex;
+}
+
+.site-nav li {
+    display: block;
+    list-style: none;
+}
+
+.site-nav a {
+    display: block;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    color: #111;
+    font-weight: bold;
+}
+
+.flex-columns {
+    display: flex;
+    justify-content: center;
+}
+
+.flex-columns.c2 > * {
+    flex: 1 1 45%;
+}
+
+.flex-columns.c3 > * {
+    flex: 0 0 30%;
+}
+
+/* Sections */
+body {
+    background-image: url("images/background.jpg");
+    background-position: center -15em;
+    background-repeat: no-repeat;
+    background-size: 1920px auto;
+    background-position-x: 100%;
+    background-position-y: -34%;
+}
+
+.section-banner,
+.section-about,
+.section-catalog header {
+    text-align: center;
+}
+
+.site-header .site-title a {
+    display: block;
+    background: url("images/logo.png") no-repeat center center;
+    background-size: contain;
+    width: 7em;
+    height: 9em;
+    text-indent: -100vh;
+    overflow: hidden;
+}
+
+.section-banner .wrapper {
+    padding: 8em 0 6em 0;
+}
+
+.section-banner .wrapper h2 {
+    padding-bottom: 1rem;
+}
+
+.section-banner .wrapper .button {
+    display: inline-flex;
+    background: #e7eef0;
+    border-radius: 0.3em;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    color: #666;
+    font-weight: bold;
+    margin-top: 1em;
+}
+
+.section-catalog .wrapper {
+    padding: 1em 0 2em 0;
+}
+.site-header .wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2em;
+}
+
+.section .wrapper.narrow {
+    max-width: 1400px;
+}
+
+.section .wrapper {
+    max-width: 1302px;
+    margin: 0 auto;
+}
+
+.section-catalog {
+    background: #60acc1;
+}
+
+.section-catalog header {
+    padding-bottom: 2em;
+}
+
+.section-catalog header h3 {
+    font-size: 1.4em;
+}
+
+.section-catalog .flex-columns.c2 {
+    gap: 15em;
+}
+
+.section-catalog .flex-columns.c2 article {
+    display: flex;
+    overflow: hidden;
+    box-shadow: rgba(17, 17, 26, 0.4) 0px 4px 16px,
+        rgba(17, 17, 26, 0.2) 0px 8px 24px, rgba(17, 17, 26, 0.3) 0px 16px 56px;
+}
+
+.section-catalog .flex-columns.c2 article > * {
+    flex: 0 0 50%;
+}
+
+.section-catalog .flex-columns.c2 article h4 {
+    font-size: 1em;
+    text-align: center;
+    padding-bottom: 1em;
+}
+
+.section-catalog .flex-columns.c2 article .media {
+    overflow: hidden;
+    position: relative;
+}
+
+.section-catalog .flex-columns.c2 article .media img {
+    position: absolute;
+    height: 100%;
+    width: auto;
+}
+
+.section-catalog .flex-columns.c2 article section {
+    background: #fff;
+    border-right: 0.7em solid #60acc1;
+    padding: 2.7em 2.7em;
+}
+
+.section-catalog .flex-columns.c3 {
+    gap: 8em;
+}
+
+.section-catalog .flex-columns.c3 img {
+    box-shadow: rgba(17, 17, 26, 0.4) 0px 4px 16px,
+        rgba(17, 17, 26, 0.2) 0px 8px 24px, rgba(17, 17, 26, 0.3) 0px 16px 56px;
+}
+
+.section-furniture {
+    background: #fff;
+}
+
+.section-furniture .wrapper {
+    padding: 3em 0;
+}
+
+.section-furniture .flex-columns.c3 {
+    gap: 8em;
+    color: #666;
+}
+
+.section-furniture .flex-columns.c3 > * {
+    flex: 1 1 30%;
+    text-align: center;
+}
+
+.section-furniture .flex-columns.c3 img {
+    height: 10em;
+    width: 10em;
+    margin: 0 auto;
+}
+
+.section-furniture .flex-columns.c3 h4 {
+    padding-bottom: 0.5em;
+    font-size: 1.2em;
+}
+
+.section-about .wrapper {
+    padding: 2em 2em;
+    opacity: 0.7;
+}
+
+.section-about .wrapper header {
+    padding-bottom: 2em;
+}
+
+.section-about .wrapper header h4 {
+    font-size: 1.2em;
+}
+
+.section-about .wrapper header p {
+    font-style: italic;
+}
+
+.section-about .wrapper p {
+    max-width: 99ch;
+    margin: 0 auto;
+}
+
+.site-footer {
+    background: #2d333c;
+    color: #fff;
+    text-align: center;
+}
+.site-footer .wrapper {
+    padding: 1em 0;
+}

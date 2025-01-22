@@ -1,0 +1,96 @@
+@media (max-width: 600px) {
+    .home-header {
+        padding: 10px 30px;
+        display: block;
+        height: auto;
+    }
+
+    .home-nav {
+        padding-left: 0;
+    }
+    .navigation-links-nav {
+        flex-direction: column;
+        align-items: flex-start;
+        font-weight: bold;
+        gap: 0.5em;
+    }
+    .navigation-links-text1 {
+        margin: 0;
+    }
+    .home-blog {
+        padding: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        max-width: auto;
+    }
+    .blog-post-card3-blog-post-card {
+        max-width: auto;
+        flex-direction: column;
+    }
+    .blog-post-card3-image {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+    .blog-post-card3-container {
+        font-weight: bold;
+    }
+    .blog-post-card3-text3,
+    .blog-post-card3-text4 {
+        font-weight: bold;
+    }
+
+    .home-stats {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        padding: 30px;
+        padding-bottom: 40px;
+    }
+    .home-stat {
+        flex: 1 1 200px;
+        align-items: center;
+        justify-content: center;
+    }
+    .home-text01 {
+        font-weight: bold;
+    }
+    .home-text02 {
+        font-weight: bold;
+    }
+    .home-container06 {
+        flex-direction: column;
+        font-weight: bold;
+    }
+    .home-container07 {
+        display: block;
+        text-align: center;
+        padding-bottom: 30px;
+    }
+    .home-container07 h1 {
+        margin-bottom: 60px;
+    }
+
+    .home-container08 {
+        width: 100%;
+        align-items: stretch;
+        flex-direction: column;
+    }
+    .home-container09 {
+        max-width: initial;
+        height: auto;
+        margin-right: 0;
+        margin-bottom: 30px;
+        font-weight: bold;
+    }
+    .home-container10 {
+        max-width: initial;
+        height: auto;
+        font-weight: bold;
+    }
+    .home-button.button {
+        margin-top: 0;
+    }
+}
