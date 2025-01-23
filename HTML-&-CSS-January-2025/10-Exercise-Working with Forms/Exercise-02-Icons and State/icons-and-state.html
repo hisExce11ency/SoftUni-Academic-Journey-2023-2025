@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Exercise-02-Icons and State</title>
+        <link rel="stylesheet" href="icons-and-state.css" />
+    </head>
+    <body>
+        <form action="#" method="post" class="form-login">
+            <header class="form-header">
+                <h2>Login</h2>
+            </header>
+
+            <p class="form-field">
+                <input
+                    type="email"
+                    id="login-email"
+                    name="login-email"
+                    required
+                />
+                <label for="email">Email</label>
+                <span class="helper info">example: john.doe@gmail.com</span>
+            </p>
+
+            <p class="form-field">
+                <input
+                    type="password"
+                    id="login-password"
+                    name="login-password"
+                    required
+                />
+                <label for="login-password">Password</label>
+                <span class="helper info"
+                    >minimum 6 characters, letters and numbers, at least 1
+                    special character</span
+                >
+            </p>
+
+            <input type="submit" value="Login" />
+        </form>
+    </body>
+</html>

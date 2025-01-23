@@ -1,0 +1,95 @@
+/* import google font */
+
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css);
+
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+
+/* CSS Reset */
+* {
+    margin: 0;
+    padding: 0;
+}
+html {
+    box-sizing: border-box;
+    font: 14px/1.5 "Lato", sans-serif;
+    color: #333;
+}
+
+body,
+input,
+textarea,
+select,
+option,
+button {
+    font: inherit;
+}
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+/* End of CSS Reset */
+
+body {
+    background-color: #f2f2f2;
+    padding: 2em;
+}
+
+.form-login {
+    max-width: 490px;
+    margin: 0 auto;
+    padding: 3em;
+    border-radius: 0.3em;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+.form-header {
+    margin-bottom: 2em;
+    color: #111;
+}
+
+.form-header::after {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 2px;
+    background-color: #ccc;
+    margin: 1.5em 0;
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 2em;
+    position: relative;
+}
+
+.form-field label {
+    font-weight: bold;
+    order: -1;
+}
+.form-field input {
+    width: 100%;
+    padding: 0.5em;
+    border: 2px solid #ddd;
+    border-radius: 0.3em;
+    outline: none;
+}
+input[required] ~ label::after {
+    display: inline-block;
+    content: " *";
+    color: #c00;
+    padding-left: 0.5em;
+}
+
+input[type="submit"] {
+    width: 100%;
+    padding: 0.7em;
+    border: none;
+    border-radius: 0.3em;
+    background-color: #ff8c00;
+    color: #fff;
+    cursor: pointer;
+}
