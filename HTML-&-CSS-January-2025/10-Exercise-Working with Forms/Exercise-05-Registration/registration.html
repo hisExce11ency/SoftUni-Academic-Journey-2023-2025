@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Exercise-05-Registration</title>
+        <link rel="stylesheet" href="registration.css" />
+    </head>
+    <body>
+        <form action="#" method="post" class="form-registration">
+            <header class="form-header">
+                <h2>Registration</h2>
+            </header>
+            <fieldset>
+                <legend>Login information</legend>
+                <p class="form-field">
+                    <input
+                        type="email"
+                        name="email"
+                        id="registration-email"
+                        required
+                    />
+                    <label for="email">Email</label>
+                    <span class="helper info">
+                        example: john.doe@gmail.com
+                    </span>
+                </p>
+
+                <p class="form-field">
+                    <input
+                        type="password"
+                        id="registration-password"
+                        name="password"
+                        required
+                    />
+                    <label for="password">Password</label>
+                    <span>
+                        minimum 6 characters, letters and numbers, at least 1
+                        special character
+                    </span>
+                </p>
+            </fieldset>
+
+            <fieldset>
+                <legend>Additional information</legend>
+                <p class="form-field">
+                    <input
+                        type="date"
+                        id="registration-date"
+                        name="date"
+                        required
+                    />
+                    <label for="registration-date">Date of Birth</label>
+                    <span class="helper info">example: john.doe@gmail.com</span>
+                </p>
+            </fieldset>
+
+            <p class="form-field">
+                <input
+                    type="submit"
+                    id="registration-submit"
+                    name="submit"
+                    value="Register"
+                />
+            </p>
+        </form>
+    </body>
+</html>
