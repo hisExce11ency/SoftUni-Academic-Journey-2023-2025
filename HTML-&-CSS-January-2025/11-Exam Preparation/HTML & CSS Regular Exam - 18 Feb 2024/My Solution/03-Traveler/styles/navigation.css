@@ -1,0 +1,9 @@
+.main-nav ul {
+    display: flex;
+    gap: 5rem;
+}
+
+.main-nav li {
+    display: block;
+    list-style: none outside;
+}

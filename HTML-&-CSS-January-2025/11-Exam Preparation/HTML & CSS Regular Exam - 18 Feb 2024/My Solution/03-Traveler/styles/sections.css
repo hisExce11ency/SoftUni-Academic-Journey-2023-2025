@@ -1,0 +1,159 @@
+.section {
+    padding: 2em max(calc((100vw - 1150px) / 2), 4em);
+}
+
+.section.section-header,
+.section.section-banner,
+.section.section-footer {
+    padding: 2em max(calc((100vw - 1920px) / 2), 4em);
+}
+
+.section.section-banner {
+    color: #fff;
+    text-align: center;
+    padding-top: 15em;
+    /* background-image: url("./images/poster.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; */
+}
+
+.section-banner p {
+    margin: 6rem auto;
+    max-width: 60ch;
+}
+
+.section-testimonial {
+    background: #f8f0e9;
+    font-style: italic;
+}
+
+.section-testimonial h5 {
+    color: #333;
+    font-weight: 500;
+}
+
+.section-testimonial blockquote {
+    font-weight: 500;
+    margin: 2rem auto;
+}
+
+.section-support {
+    background: #e14747;
+    color: #fff;
+    text-align: center;
+}
+
+.section-support p {
+    margin: 2rem auto;
+    max-width: 30ch;
+}
+
+.section-article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #f8f0e9;
+    padding: 4em max(calc((100vw - 600px) / 2), 4em);
+}
+
+.section-article h3 {
+    font-weight: 500;
+    text-align: center;
+    padding-bottom: 4rem;
+}
+.section-article img {
+    max-width: 100%;
+}
+
+.section-article article {
+    width: 100%; /* Ensure the article takes the full container width */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align content to the start by default */
+    gap: 0rem; /* Add spacing between elements */
+}
+
+.section-article article a {
+    display: inline-block;
+    margin-top: 2rem;
+    padding: 0.5rem 2rem;
+    background: #fff;
+    color: #111;
+    border: 2px solid #111;
+    border-radius: 0.5rem;
+    text-decoration: none;
+}
+
+.section-article article a:hover {
+    background: #111;
+    color: #fff;
+}
+
+.section-article article .button:first-of-type {
+    align-self: flex-start; /* Align the "Read more" button to the start */
+}
+
+.section-article article .button.button-center {
+    align-self: center; /* Center the "Read all articles" button */
+}
+
+.section-find {
+    background: #e14747;
+    color: #fff;
+    text-align: center;
+}
+
+.section-find h3 {
+    padding-top: 2em;
+    padding-bottom: 1em;
+    max-width: 30ch;
+}
+
+.section-find p {
+    margin: 2rem auto;
+    max-width: 80ch;
+}
+
+.section-find a {
+    display: inline-block;
+    margin: 2rem auto;
+    padding: 1rem 2rem;
+    background: #fad87a;
+    color: #111;
+    border-radius: 2rem;
+    text-decoration: none;
+}
+
+.section-find a:hover {
+    background: #a98112;
+    color: #fff;
+}
+.section.section-footer {
+    padding: 2em max(calc((100vw - 1450px) / 2), 4em);
+}
+.section-footer {
+    display: flex;
+    align-items: flex-start;
+    background: #352b2a;
+    color: #fff;
+    gap: 3rem;
+    flex-direction: column;
+}
+
+.section-footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.section-footer img {
+    max-width: 100px;
+}
+
+.section-footer p {
+    max-width: 47ch;
+}
+
+footer p + p {
+    color: #666;
+}
