@@ -1,0 +1,37 @@
+body {
+    background: #54546d;
+    background-image: url("../images/calculator-icon.svg");
+    background-repeat: no-repeat;
+    background-size: 1920px 310px;
+    background-position: -942px 300px;
+}
+
+.section {
+    padding: 1em max(calc((100vw - 1920px) / 2), 5.27em);
+}
+.section-header {
+    background: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.section-header img {
+    max-width: 100px;
+}
+
+.section-title a {
+    display: block;
+    width: 170px;
+    height: 60px;
+    overflow: hidden;
+    text-indent: -200vw;
+    background-image: url("../images/creative-logo.svg");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.main-nav ul {
+    display: flex;
+    gap: 1em;
+}

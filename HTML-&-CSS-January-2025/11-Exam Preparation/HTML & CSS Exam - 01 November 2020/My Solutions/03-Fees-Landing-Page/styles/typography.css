@@ -1,0 +1,42 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+html {
+    font: 22px/1.5 "Lato", sans-serif;
+    color: #54546d;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Montserrat", sans-serif;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+h2 {
+    font-size: 1.9rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+body,
+button,
+input,
+textarea,
+select,
+option,
+fieldset,
+legend,
+table,
+label,
+a {
+    font: inherit;
+    color: inherit;
+}
