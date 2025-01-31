@@ -1,0 +1,227 @@
+@media (width <= 600px) {
+    .home-left,
+    .home-right,
+    .input {
+        display: none;
+    }
+
+    .home-navbar1 {
+        justify-content: flex-start;
+    }
+    .navbar-logo-title {
+        margin: 0;
+        font-size: 16px;
+        line-height: 1.2;
+    }
+    .home-header {
+        padding-top: 12px;
+        padding-bottom: 12px;
+    }
+    .max-width-container {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .home-container {
+        padding-top: 45px;
+    }
+    .section-container {
+        padding-top: 20px;
+        flex-direction: column;
+    }
+
+    .home-info {
+        margin-bottom: 25px;
+    }
+
+    .home-text12 {
+        font-size: 8px;
+        line-height: 12px;
+    }
+
+    .home-hero1 {
+        flex-direction: column;
+        gap: 1em;
+    }
+    .home-container03 {
+        align-items: center;
+        margin-left: 60px;
+        padding-right: 40px;
+    }
+    .Heading-1 {
+        margin-bottom: 25px;
+        font-size: 24px;
+        line-height: 1.5;
+    }
+    .home-container04 {
+        font-size: 12px;
+        margin-bottom: 25px;
+    }
+    .home-text17 {
+        font-size: 10px;
+        line-height: 12px;
+    }
+    .home-text18 {
+        font-size: 20px;
+        line-height: 20px;
+    }
+    .button {
+        font-size: 10px;
+        line-height: 14px;
+        padding: 0.5em 1.5em;
+    }
+
+    .column {
+        flex-wrap: wrap;
+        padding-top: 2em;
+    }
+
+    .Heading-2 {
+        font-size: 18px;
+        line-height: 24px;
+    }
+    .section-heading-text {
+        margin-bottom: 5px;
+    }
+
+    .section-heading-text1 {
+        font-size: 10px;
+        line-height: 12px;
+    }
+    .section-heading-section-heading {
+        margin-bottom: 24px;
+    }
+    .home-cards-container {
+        gap: 0.5em;
+    }
+    .category-card-category-card {
+        flex: 0 0 calc(50% - 0.5em);
+        max-width: calc(50% - 0.5em);
+        aspect-ratio: 1;
+    }
+    .category-card-image {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        object-position: center;
+        aspect-ratio: 1;
+    }
+    .category-card-text {
+        font-size: 12px;
+        line-height: 12px;
+    }
+    .home-main {
+        padding-bottom: 10px;
+    }
+    .Heading-3 {
+        font-size: 18px;
+        line-height: 20px;
+    }
+    .home-container05 {
+        flex: 1 1 auto;
+        width: calc(100% - (2 * 3.5em));
+        height: auto;
+    }
+
+    .home-text20 {
+        font-size: 12px;
+        line-height: 16px;
+        padding-bottom: 10px;
+    }
+    .home-text23 {
+        font-size: 8.7px;
+        line-height: 16px;
+        max-width: 55ch;
+        margin-bottom: 24px;
+    }
+    .home-container06 {
+        flex-direction: column;
+    }
+    .home-container07 {
+        margin-top: 30px;
+    }
+    .home-text29 {
+        font-size: 20px;
+        line-height: 24px;
+    }
+    .home-text30 {
+        font-size: 10px;
+        line-height: 16px;
+        max-width: 55ch;
+    }
+    .home-text31 {
+        font-size: 12px;
+        line-height: 16px;
+    }
+    .home-text32 {
+        font-size: 8px;
+    }
+    .home-content {
+        padding-top: 15px;
+        margin-bottom: 20px;
+    }
+    .home-left4 {
+        padding-bottom: 20px;
+    }
+    .home-image6 {
+        width: 100%;
+    }
+    .blog-post-card-blog-post-card {
+        max-width: 100%;
+    }
+    .blog-post-card-text {
+        font-size: 14px;
+        line-height: 16px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+    .blog-post-card-text1 {
+        font-size: 10px;
+        line-height: 12px;
+        margin-top: 10px;
+        margin-bottom: 25px;
+    }
+    .home-footer1 {
+        font-size: 10px;
+        flex-direction: column;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .home-links-container {
+        flex-direction: column;
+        gap: 2em;
+    }
+    .home-container09 {
+        order: 1;
+    }
+    .home-container09 .Heading-3 {
+        font-size: 16px;
+    }
+    .home-text33 {
+        font-size: 10px;
+        line-height: 12px;
+    }
+    .home-text34 {
+        font-size: 10px;
+        line-height: 12px;
+    }
+    .home-text35 {
+        font-size: 10px;
+        line-height: 12px;
+    }
+    .home-text36 {
+        font-size: 10px;
+        line-height: 12px;
+    }
+    .home-text37 {
+        font-size: 10px;
+        line-height: 12px;
+    }
+    .home-text38,
+    .home-text45,
+    .home-text51 {
+        font-size: 12px;
+        line-height: 12px;
+        margin-bottom: 20px;
+    }
+}
