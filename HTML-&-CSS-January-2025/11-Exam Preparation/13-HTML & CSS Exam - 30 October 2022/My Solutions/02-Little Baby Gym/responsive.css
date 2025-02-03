@@ -1,0 +1,106 @@
+@media (width <= 600px) {
+    .site-main {
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .site-navigation {
+        display: none;
+    }
+
+    .entry-header {
+        align-items: center;
+        background-size: 225% auto;
+        background-position: 50% center;
+        background-repeat: no-repeat;
+        padding: 6rem 1rem 6rem 1rem;
+    }
+
+    .entry-header-container {
+        display: inline-block;
+        width: 100%;
+    }
+
+    .button-primary {
+        text-align: center;
+    }
+
+    .site-logos-container {
+        min-width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+    .site-information {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+    .site-information-image {
+        display: none;
+    }
+    .entry-description {
+        text-align: center;
+        margin: 0 auto;
+    }
+    .site-form {
+        display: flex;
+        text-align: center;
+        flex-direction: column;
+        justify-content: center;
+        margin: 0;
+    }
+
+    .site-form-container {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .site-form-container h2 {
+        font-size: 1rem;
+    }
+
+    .site-form form {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .site-form form > p {
+        width: 100%;
+        flex-direction: column;
+        flex: 1 1 100%;
+    }
+
+    .site-form input {
+        width: 100%;
+    }
+    .site-form button {
+        margin-left: 0;
+    }
+    .site-blog-container {
+        margin-top: 0;
+        text-align: center;
+    }
+    .site-posts {
+        flex-direction: column;
+        align-items: center;
+    }
+    .site-post {
+        width: 80%;
+    }
+    .site-footer {
+        flex-direction: column;
+        text-align: center;
+    }
+    .site-blog-container h2 {
+        max-width: 15ch;
+        margin: 0 auto;
+    }
+}
