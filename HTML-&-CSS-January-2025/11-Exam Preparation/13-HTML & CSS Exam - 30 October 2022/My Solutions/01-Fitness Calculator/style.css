@@ -1,0 +1,161 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font: 16px/1.5 "Open Sans", sans-serif;
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body,
+input,
+option,
+textarea,
+select,
+fieldset,
+legend,
+button {
+    font: inherit;
+}
+
+h1,
+h2,
+h3 {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 500;
+}
+h2 {
+    font-size: 1.8em;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+}
+
+/* Container */
+.fitness-container {
+    display: flex;
+    width: 100%;
+    max-width: 1344px;
+    margin: 5em auto;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 1.3em;
+    overflow: hidden;
+}
+
+/* Left Section - Image */
+.image-section {
+    flex: 1;
+    background-color: #222;
+}
+
+.image-section img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/* Right Section - Form */
+.form-section {
+    flex: 1;
+    padding: 30px;
+    background: #f6f7f8;
+}
+
+.form-section h2 {
+    margin-top: 1em;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+/* Buttons */
+.buttons {
+    display: flex;
+    margin-top: 3em;
+    margin-bottom: 1em;
+    gap: 7em;
+}
+
+.btn {
+    color: #333;
+    padding: 0.5em 1em;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background: #86d862;
+}
+
+.btn-secondary {
+    background: #d9d9d9;
+    padding: 0.5em 2.5em;
+}
+
+/* Form Inputs */
+form {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+}
+#gender,
+#age {
+    width: 200px;
+    border: 1px solid #ccc;
+    border-radius: 0.3em;
+    line-height: 0.8em;
+}
+#weight {
+    width: 80%;
+    border: 1px solid #ccc;
+    margin-bottom: 1em;
+}
+
+#feet,
+#inches {
+    width: 280px;
+    border: 1px solid #ccc;
+    border-radius: 0.3em;
+}
+
+label,
+legend {
+    font-weight: bold;
+    margin-bottom: 1em;
+}
+
+/* Fieldset Styling */
+fieldset {
+    display: flex;
+    border: none;
+    gap: 2em;
+    margin-bottom: 1em;
+    align-items: center;
+    justify-content: center;
+}
+
+legend {
+    font-weight: bold;
+}
+
+.calculate-btn {
+    width: 100%;
+    padding: 0.5em;
+    margin-top: 5em;
+    background: #05a2d3;
+    color: white;
+    border: none;
+    border-radius: 1.5em;
+    cursor: pointer;
+    font-weight: bold;
+}
