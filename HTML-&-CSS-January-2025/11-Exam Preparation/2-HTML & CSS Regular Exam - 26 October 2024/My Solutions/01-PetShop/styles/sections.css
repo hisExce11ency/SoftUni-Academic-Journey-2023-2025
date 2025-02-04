@@ -1,0 +1,75 @@
+
+.pet-shop .section-media {
+    display: flex;
+    width: 35%;
+    flex-grow: 1;
+}
+
+.section-media span {
+    display: none
+}
+
+.pet-shop .section-content {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    width: 60%;
+
+}
+
+.section-content .section-header {
+   padding: 1rem 3rem; ;
+   background: #F3F3F3;
+   border-left: 5px solid #7AB730;
+}
+
+.section-content .section-header a {
+    color: #7AB730;
+}
+
+.section-content .title {
+    text-transform: uppercase;
+    max-width: 25ch;
+}
+
+.section-content .description {
+    padding: 1rem 3rem;
+    font-weight: 400;
+}
+
+.section-content .section-ctn {
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+    background: #F3F3F3;
+}
+
+.section-content .section-ctn p {
+   color: #999;
+
+}
+
+.section-content .btn-ctn {
+    display: flex;
+    margin-bottom: 1em;
+    
+}
+
+.section-content .btn {
+    width: 50%;
+    display: inline-block;
+    padding: 0.5em ;
+    text-align: center;
+    text-transform: uppercase;
+
+}
+
+.section-content .btn-primary {
+    background: #7AB730;
+    color: #FFFFFF;
+}
+
+.section-content .btn-secondary {
+    background: #F0F0F0;
+    color: #7AB730;
+}
