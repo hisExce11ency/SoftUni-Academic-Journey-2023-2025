@@ -1,0 +1,150 @@
+/* main */
+
+.section.section-banner{
+    padding-top: 18em;
+    padding-bottom: 18em;
+    text-align: center;
+    color: #fff;
+}
+.section.section-banner h4{
+    text-transform: uppercase; 
+    letter-spacing: -4%;   
+} 
+
+.section.section-banner h1{
+    max-width: 16ch;
+}
+
+.section.section-about{
+    flex-direction: row;
+    background: #C8E7F8;
+    flex-wrap: wrap;
+    align-items: center;
+    padding-bottom: 4em;
+}
+.about-title{
+    flex: 1 0 100%;
+    text-align: center;
+    margin-top: 2em;
+}
+.about-title::before{
+    content: '';
+    display: block;
+    width: 2.5em;
+    height: 5px;
+    background: #F195B2;
+    margin: 0 auto;
+
+}
+
+article{
+   
+    flex: 1 0 33.333%;
+    padding:  1em;
+}
+.about-img{
+    
+    flex: 1 0 33.333%;
+    padding: 0 1em;
+}
+
+
+.features li a{
+    color: #333;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 2em;
+}
+.features li i{
+    font-size: 1.5em;
+    padding-right: 1em;
+    color: #62C3E7;
+}
+
+.features li h5{
+    margin: 0;
+}
+
+.section.section-ice-cream{
+    padding-top: 6em;
+    background: #fff;
+}
+
+
+
+.section-ice-cream .social{
+    margin-top: 2em;
+    margin-bottom: 1em;
+}
+
+.section-ice-cream .social li+li{
+    margin-left: 0.5em;
+}
+
+.section-ice-cream .social li a i{
+    width: 2em;
+    height: auto;
+    text-align: center;
+    aspect-ratio: 1/1;
+    color: #62C3E7;
+    border: 2px solid #B0E1F3;
+    border-radius: 50%;
+    padding: 0.5em;
+    transition: all 0.3s ease-in-out;
+}
+.section-ice-cream .social li a i:hover{
+    color: #fff;
+    background: #62C3E7;
+}
+
+.section.section-info{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    background: #fff;
+
+}
+
+.section.section-info .hidden{
+    display: none;
+}
+
+.section.section-info *{
+    margin-bottom: 1em;
+}
+
+.section.section-info article{
+    margin-bottom: 0;
+    padding: 0 1em;
+}
+
+.section.section-info .left{
+    text-align:right;
+    border-right: 4px solid #ddd
+
+}
+.section.section-info .right{
+    text-align: left;
+}
+
+
+.button{
+    display: inline-block;
+    padding: 0.8em 2em;
+    border-radius: 2em;
+    font-weight: 500;
+    color: #fff;
+}
+
+.button.primary{
+    background: #F195B2;
+}
+
+.button.secondary{
+    background: #62C3E7;
+    
+}

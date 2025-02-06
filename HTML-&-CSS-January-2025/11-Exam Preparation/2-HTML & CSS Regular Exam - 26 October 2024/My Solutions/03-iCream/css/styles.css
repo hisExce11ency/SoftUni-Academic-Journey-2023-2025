@@ -1,0 +1,10 @@
+@import url("reset.css");
+@import url("typography.css");
+@import url("layout.css");
+
+/* mainsections */
+@import url("header.css");
+@import url("main.css");
+@import url("footer.css");
+
+/* subsections */

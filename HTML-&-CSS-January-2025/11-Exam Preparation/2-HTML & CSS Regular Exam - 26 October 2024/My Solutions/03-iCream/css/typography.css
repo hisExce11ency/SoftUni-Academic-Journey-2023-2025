@@ -1,0 +1,56 @@
+/* typography */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+
+
+html{
+font:20px/1.5 'Poppins', sans-serif;
+color: #555555;
+}
+
+h1{
+    font-size: 5.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+
+h2{ font-size: 3.25rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+
+h3{font-size: 2.45rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+
+h4{font-size: 1.6rem; 
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+
+h5{font-size: 1.2rem;   
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+h6{font-size: 1rem;   
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+
+p{
+    margin-bottom: 1.5rem;
+}
+
+
+
+body,
+input,
+textarea,
+select,
+option,
+button{
+   font: inherit;
+}
+
