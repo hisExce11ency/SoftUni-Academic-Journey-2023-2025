@@ -1,0 +1,14 @@
+
+body{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #C1BBBB;
+}
+
+.section{
+  display: flex;
+  padding: 2rem max(calc((100vw - 1900px) / 2), 2rem);
+  align-items: center;
+  justify-content: space-between
+}

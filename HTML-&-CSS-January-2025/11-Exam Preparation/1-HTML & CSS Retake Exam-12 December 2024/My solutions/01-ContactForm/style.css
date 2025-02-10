@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 32px;
+    line-height: 1.5;
+    color: #585858;
+    box-sizing: border-box;
+}
+
+*, *::before, *::after{
+    box-sizing: inherit;
+}
+
+h1, h2, h3, h4, h5, h6{
+    line-height: 1.2;
+}
+
+p{
+    margin: 1em 0;
+}
+
+a{
+    text-decoration: none;
+    color: #585858;
+}
+
+body,input,button,textarea,select,a{
+    font: inherit;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #F6F6F6;
+    
+}
+
+.container{
+    max-width: 1750px;
+    margin: 0 auto;
+    padding: 1em;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    background: #F6F6F6;
+}
+
+.get-in-touch{
+    width: 70%;
+    display: flex;
+    flex-wrap: wrap;  
+    flex-grow: 1 1 70%;  
+}
+
+.get-in-touch h2,.social h2{
+    width: 100%;
+    font-size: 1.12em;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    margin-bottom: 2rem;
+}
+
+.get-in-touch form{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 0.5em;
+}
+
+.get-in-touch input, .get-in-touch textarea{
+    padding:  0.5em 0;
+    border: none;
+    border-bottom: 2px solid #ccc;
+    font-size: 1em;
+    background: #F6F6F6;
+    opacity: 0.7;
+}
+.get-in-touch input{
+    flex: 0 0 calc((100%/2) - 0.3rem);
+}
+
+.get-in-touch textarea{
+    width: 100%;
+}
+
+.get-in-touch button{
+    padding: 0.3em 1em;
+    border-radius: 0.2em;
+    border: none;
+    font-size: 1em;
+    color: #fff;
+    background: #585858;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    align-self: flex-start;
+    text-transform: uppercase;
+    font-weight: 600;
+}   
+
+.get-in-touch button:hover{
+    background: #333;
+}
+
+.social{
+    width: 30%;
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1 1 28%;
+    flex-direction: column;
+}
+
+.social ul{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    list-style: none;
+}
+
+.social li a{
+    color: #585858;
+    transition: color 0.3s ease;
+}
+
+.social li a:hover{    
+    color: #333;
+}
+
+.social li a i{
+    font-size: 1.1em;
+    padding: 0.3em 0.84em;
+    border-radius: 0.2em;
+    background: #F6F6F6;
+    border: 2px solid #ccc;
+}
+
+.social li a span{
+    display: none;
+}
+
+p{
+    width: 100%;
+    opacity: 0.8;
+}
+p>a{
+    color: #585858;
+    transition: color 0.3s ease;
+    text-decoration: underline;
+    font-weight: 600;
+}
+p>a:hover{
+    color: #333;
+}

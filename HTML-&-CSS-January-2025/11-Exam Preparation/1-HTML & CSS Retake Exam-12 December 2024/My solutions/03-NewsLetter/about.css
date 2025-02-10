@@ -1,0 +1,101 @@
+.about{
+    background-color: #fff;
+    align-items: baseline;
+    justify-content: space-between;
+}
+.interesting-stuff{
+    flex: 0 1 32%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.interesting-stuff h4{
+    flex-basis: 100%;
+    color: #444;
+    font-weight: bold;
+
+}
+
+.interesting-stuff ul{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex: 0 0 100%;
+    list-style: none;
+    gap: 1rem;
+}
+
+.interesting-stuff ul li{
+    flex: 0 1 calc(100% / 2 - 0.5rem);
+    max-width: 100%;
+    border-radius: 0.5rem;
+}
+
+.interesting-stuff ul li img{
+    width: 100%;
+    border-radius: 0.5rem;
+}
+
+.interesting-stuff .button{
+    display: flex;
+    align-items: center;
+    align-self: flex-start;
+    font-size: 1.6rem;
+    gap: 0.5rem;
+    padding: 1rem 1.5rem;
+    border-radius: 0.4rem;
+    background-color: #0090C5;
+    color: #fff;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.interesting-stuff .button:hover{
+    background-color: #fff;
+    color: #0090C5;
+    border: 1px solid #0090C5;
+}
+
+.about-us{
+    flex: 0 1 65%;
+    display: flex;
+    flex-direction: column;
+    gap: 2.6rem;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.about-us h3{
+    color: #444;
+    font-weight: bold;
+}
+
+.about-us p{
+    color: #444;
+    font-weight: 300;
+    line-height: 2;
+}
+
+.about-us .button{
+    display: inline-block;
+    align-items: center;
+    font-size: 1.6rem;
+    gap: 0.5rem;
+    padding: 1rem 1.5rem;
+    border-radius: 0.4rem;
+    background-color: #0090C5;
+    color: #fff;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.about-us .button:hover{
+    background-color: #fff;
+    color: #0090C5;
+    border: 1px solid #0090C5;
+}

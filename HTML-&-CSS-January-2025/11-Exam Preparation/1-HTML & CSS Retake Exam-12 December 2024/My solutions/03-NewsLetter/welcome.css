@@ -1,0 +1,62 @@
+
+.welcome-container{
+    padding: 4rem ;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
+    border-radius: 0.5rem;
+}
+
+.welcome-content{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.welcome-content h2{
+    color: #444;
+    font-weight: bold;
+    font-size: 4rem;
+    max-width: 15ch;
+    line-height: 1;
+}
+
+.welcome-content p{
+    color: #444;
+    font-weight: 300;
+    font-size: 3rem;
+    max-width: 35ch;
+    line-height: 1.2;
+}
+
+.welcome-btn-cta{
+    display: flex;
+    flex:0 1 40%;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+}
+
+.welcome-btn-cta .button{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: bold;
+    padding: 1rem 2.56rem;
+    border-radius: 0.5rem;
+    cursor: pointer;   
+    font-size: 2.56em;
+}
+
+.welcome-btn-cta .button.primary{
+    background-color: #0090C5;
+    color: #fff;
+}
+
+.welcome-btn-cta .button.secondary{
+    background-color: #F2F2F2;
+    color: #444;
+}
