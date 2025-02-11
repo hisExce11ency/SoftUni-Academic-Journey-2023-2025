@@ -1,0 +1,139 @@
+
+.section.services{
+    background-color: #fff;
+    padding: 1em min(1em , calc((100vw - 200px) / 2));
+}
+
+.services-title{
+    display: none;
+}
+
+.service{
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    padding-bottom: 3em;
+    margin-bottom: 1em;
+}
+
+.service img{
+    width: 30%;
+}
+
+.service-title{
+    text-align: center;
+    width: 13ch;
+    font-weight: 700;
+}
+
+.service-description{
+    text-align: center;
+    width: 70ch;
+}
+
+.service:last-of-type:before{
+    display: block;
+    content: "";
+    background-image: url("../images/bubble.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    width: 15em;
+    height: auto;
+    aspect-ratio: 1/1;
+    top: -150px;
+    left: -130px;
+    z-index: 1;
+    overflow-x: hidden;
+}
+
+.service:last-of-type:after{
+    display: block;
+    content: "";
+    background-image: url("../images/bubble.png");
+    background-size: contain ;
+    background-repeat: no-repeat;
+    position: absolute;
+    width: 15em;
+    height: auto;
+    aspect-ratio: 1/1;
+    top: calc(100% - 150px);
+    left: calc(100% - 180px);
+    z-index: 1;
+    overflow-x: hidden;
+}
+
+.section.our-company{
+    gap: 1em;
+}
+
+.our-company-description{
+    color: #FF3946;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.our-company-text{
+    text-align: center;
+    width: 55ch;
+}
+
+.our-company-title{
+    text-align: center;
+    width: 11ch;
+    font-weight: 700;
+}
+
+.section.contact-us{
+    gap: 1em;
+}
+
+.contact-us-description{
+    color: #FF3946;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.contact-us-title{
+    text-align: center;
+    width: 11ch;
+    font-weight: 700;
+}
+
+.contact-us-form{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    width: 100%;
+}
+
+.contact-us-form input,.contact-us-form textarea{
+    padding: 1.5em;
+    border: none;
+    outline: none;
+    background-color: #314584;
+    color: #fff;
+    border-radius: 1.2em;
+}
+
+.contact-us-form textarea:focus,.contact-us-form input:focus{  
+    border: 3px solid #FF3946;              
+}
+
+.contact-us-form input::placeholder{
+    color: #fff;
+    font-family: "Playwrite PE", sans-serif;
+    font-weight: 400;
+}
+
+
+.contact-us-form textarea::placeholder{
+    color: #fff;
+    font-family: "Playwrite PE", sans-serif;
+    font-weight: 400;
+}

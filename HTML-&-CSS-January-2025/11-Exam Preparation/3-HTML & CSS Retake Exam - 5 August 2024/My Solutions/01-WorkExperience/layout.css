@@ -1,0 +1,99 @@
+body{
+    background-color: #FFF0E4;
+}
+
+.work-experience{
+    max-width: 1370px;
+    margin: 2em auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.work-experience h1{
+    display: none;
+}
+
+.job-information{
+    width: 36%;
+    padding: 1em;
+    background-color: #FFF0E4;
+    box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
+}
+
+.job-information h2{
+    margin-bottom: 1em;
+    font-weight: 300;
+    letter-spacing: 2px;
+}
+
+.current-job li{
+    margin-bottom: 1em;
+}
+
+.current-job li i{
+    margin-right: 1em;
+    color: #2991E6;
+}
+
+.skills li{
+    margin-top: 1em;
+}
+
+.skills li p:nth-child(even){
+    text-align: center;
+    color: #fff;
+    border-radius: 0.5em;
+}
+
+.skills li:nth-child(1) p:nth-child(2){
+    width: 90%;
+    background-color: #2991E6;
+}
+
+.skills li:nth-child(2) p:nth-child(2){
+    width: 80%;
+    background-color: #2991E6;
+}
+
+.skills li:nth-child(3) p:nth-child(2){
+    width: 75%;
+    background-color: #2991E6;
+}
+
+.skills li:nth-child(4) p:nth-child(2){
+    width: 50%;
+    background-color: #2991E6;
+}
+
+.work-experience-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 62.5%;
+    padding: 1em;
+    background-color: #FFF0E4;
+    box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
+}
+
+.work-experience-info h2{
+    text-align: center;
+    margin: 1em 0;
+    font-weight: 300;
+    letter-spacing: 2px;
+}
+ 
+.work-experience-list li{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    margin-bottom: 1em;
+}
+
+.work-experience-list li h4{
+    color: #2991E6;
+}
+
+.work-experience-list li p{
+    max-width: 85ch;
+    margin-bottom: 0;
+}

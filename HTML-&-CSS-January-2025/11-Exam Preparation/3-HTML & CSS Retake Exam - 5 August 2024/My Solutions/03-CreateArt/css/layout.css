@@ -1,0 +1,16 @@
+
+
+body{
+    overflow-x: hidden;
+}
+
+.section{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2em min(5em , calc((100vw - 660px) / 2));
+}
+
+
+
