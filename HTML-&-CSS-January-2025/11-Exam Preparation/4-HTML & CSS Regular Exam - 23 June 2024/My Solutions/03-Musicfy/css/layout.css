@@ -1,0 +1,8 @@
+.section:not(:last-of-type) {
+    padding: 0rem min(calc((100% - 1620px) / 2), 1rem);
+}
+.section .container {
+    max-width: 1620px;
+    margin: 0 auto;
+}
+

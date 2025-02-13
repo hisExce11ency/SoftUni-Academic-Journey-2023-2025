@@ -1,13 +1,13 @@
-@media (width<=600px) { 
-    .checkbtn{
+@media (width<=600px) {
+    .checkbtn {
         display: block;
         order: 2;
     }
-    nav ul{
+    nav ul {
         display: none;
     }
 
-    #check:checked ~ ul{
+    #check:checked ~ ul {
         display: block;
         width: 30%;
         border-radius: 0.3rem;
@@ -17,28 +17,25 @@
         right: 20px;
         background-color: #38cccc;
     }
-    .site-header{
+    .site-header {
         display: flex;
         flex-direction: column;
-    
     }
-    .site-header > i{
+    .site-header > i {
         left: 0px;
     }
-    .about{
+    .about {
         display: flex;
         flex-direction: row;
         justify-content: center;
         align-items: center;
     }
-    .about-header{
-       position: revert;
+    .about-header {
+        position: revert;
     }
-    .gallery{
+    .gallery {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-    
     }
-
 }

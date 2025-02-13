@@ -1,0 +1,163 @@
+.section-plans{
+
+    background-color: #1DB954;
+}
+
+.section-plans img{
+    width:800px;
+    position: absolute;
+    top: 25%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+.section-plans .container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 360px;
+    position: relative;
+}
+
+.plans-title{
+    margin-top: 1.5em;
+    color: #fff;
+}
+
+.plans{
+    display: flex;
+    width: 100%;
+    gap: 10em;
+    justify-content: center;
+    position: absolute;
+    top: 95%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+
+.plan{
+   width: 30%;
+   border-top-left-radius: 0.5em;
+   border-top-right-radius: 0.5em;
+   background-color: #fff;
+}
+
+.plan-title{
+    margin-bottom: 1em;
+    text-align: center;
+}
+
+.plan ul{
+    margin-bottom: 1em;
+}
+
+.plan li{
+    margin-left: 3em;
+    margin-right: 1em;
+    margin-bottom: 0.5em;
+}
+
+.btn{
+    display: block;
+    margin: 0 auto;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    padding: 0.2em 2em;
+    border-radius: 6em;
+    border: none;
+    background-color: #1DB954;
+    color: #fff;
+}
+
+.price{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+    background-color: #191414;
+    padding: 1em;
+    color: #fff;
+    border-bottom-right-radius: 0.5em;
+    border-bottom-left-radius: 0.5em;
+}
+
+.price p+p{
+    padding-left: 1em;
+    border-left: 1px solid #fff;
+}
+
+.section.section-features{
+    padding-top: 15em;
+    background-color: #fff;
+}
+
+.section-features .container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5em;
+    padding-top: 5em;
+    padding-bottom: 5em;
+}
+
+.features-title{
+    margin-bottom: 1em;
+}
+
+.features-content ol li{
+    margin-bottom: 1em;
+    margin-left: 1em;
+}
+
+.section.section-difrence{
+    background-color: #fff;
+}
+
+.section-difrence .container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1em;
+    padding-bottom: 5em;
+}
+
+table {
+    width: 90%;
+    border-collapse: collapse;
+    border-radius: 0.5em;
+    overflow: hidden;
+}
+
+thead {
+   display : none;
+}
+
+th, td {
+    padding: 0.5em;
+}
+th {
+    text-align: left;
+    opacity: 0.5;
+}
+
+tr:nth-child(odd) {
+    background-color: #CCCBCB;
+}
+
+tr:nth-child(even) {
+    background-color: #81D8A0;
+}
+
+td img {
+    margin: 0 auto;
+    width: 25px;
+}
+
+
+

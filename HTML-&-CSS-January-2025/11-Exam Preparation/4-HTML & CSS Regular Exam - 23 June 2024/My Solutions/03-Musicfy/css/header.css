@@ -1,0 +1,28 @@
+
+.section.section-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000000;
+}
+.section.section-header .logo{
+    display: none;
+}
+.section-header img{
+    width: 70px;
+}
+.main-nav ul{
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    list-style: none;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5em;
+}
+.main-nav li a{
+    color: #fff;
+    text-align: center;
+    
+}
