@@ -1,0 +1,126 @@
+@import url("https://fonts.googleapis.com/css2?family=Agbalumo&display=swap");
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+*,
+*::before,
+*::after{
+    box-sizing: inherit;
+}
+
+html{
+    box-sizing: border-box;
+    font: 16px/1.5 "Agbalumo", sans-serif;
+    color: #333;
+}
+
+body,input,button,textarea,select{
+    font: inherit;
+}
+
+a{
+    color: inherit;
+    text-decoration: none;
+}
+
+img{
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+ul,ol{
+    list-style: none;
+}
+
+body{
+    background-color: #fff;
+    display: flex;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    text-align: center;
+    width: 840px;
+    margin: 0 auto;
+    border: 2px solid #000;
+}
+
+.wiki header{
+  background-color: #D5EBEA;
+  padding: 16px 32px 0 16px;
+}
+
+header > h2{
+    font-size: 32px;
+    margin: 16px 0 0;
+}
+
+header > p{
+    font-size: 18px;
+    line-height: 1.2;
+    font-weight: 100;
+}
+
+header > hr{
+    border: 1px solid #000;
+}
+
+.content{
+    padding: 32px 16px;
+    display: flex;
+    gap: 32px;
+}
+
+.content > .media{
+    max-width:39%;
+    padding: 10px;
+    border: 2px solid #000;
+}
+
+.map-text{
+    margin: 16px 0 0;
+    font-size: 12px;
+    text-align: left;
+    text-indent: 15px;
+}
+
+.aside-text{
+    text-indent: 30px;
+    max-width: 49ch;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-evenly;
+    text-align: left;
+    gap: 16px;
+}
+
+footer a{
+    max-width: 50%;
+    display: block;
+    text-align: center;
+    background-color: black;
+    color: white;
+    font-size: 18px;
+    font-weight: 100;
+}
+
+footer ul{
+    background-color: #D5EBEA;
+}
+
+footer ul li{
+    padding-top: 10px;
+    text-align: left;
+    padding-left: 30px;
+}
+
+footer ul li p strong{
+    color: #000;
+}

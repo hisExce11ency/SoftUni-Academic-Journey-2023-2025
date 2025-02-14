@@ -1,0 +1,23 @@
+/* layout */
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-image: url("../images/background.jpg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center top 8.5em;
+}
+
+/* .site{
+    max-width: 1920px;
+    margin: 0 auto;
+} */
+
+.section{
+    padding: 2rem max(calc((100% - 1620px) / 2), 2rem);
+}
+
+.section.site-header{
+    padding: 2rem min(calc((100% - 600px) / 2), 2rem);
+}

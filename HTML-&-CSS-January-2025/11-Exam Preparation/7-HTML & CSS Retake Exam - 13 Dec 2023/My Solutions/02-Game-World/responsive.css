@@ -1,0 +1,29 @@
+@media (width <= 600px) {
+    .tm-gallery{
+        width: 100%;
+        margin: 0 
+    }
+    .tm-gallery-page{
+        width: 100%;
+        margin: 0 ;
+        justify-content: center;
+        align-items: center;
+    }
+    .tm-gallery-item{
+        max-width: 55%
+    }
+    .row{
+        margin: 0;
+    }
+    .tm-cta-section{
+        width: 100%;
+    }
+    .tm-description-figure{
+        width: 100%;
+    }
+    
+    .col-md-6{
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+}

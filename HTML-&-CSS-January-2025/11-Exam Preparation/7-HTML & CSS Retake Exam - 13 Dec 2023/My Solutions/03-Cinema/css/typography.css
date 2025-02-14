@@ -1,0 +1,57 @@
+/* typography */
+
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap');
+
+html{
+    font:14px/1.5 'Ubuntu', sans-serif;
+}
+body, input, select, option textarea, form, label, legend, button {
+    font:inherit;
+}
+
+h1,h2,h3,h4,h5,h6{
+    font-size: 1em;
+    margin-bottom: 1rem;
+    font-weight:normal;
+
+    &:not(:first-child){  
+        margin-top: 1.5rem;
+    }  
+}
+
+h1{
+    font-size: 2.8em;
+}
+
+h2{
+    font-size: 2.2em;
+}
+
+h3{
+    font-size: 1.8em;
+}
+
+h4{ 
+    font-size: 1.4em;
+}
+
+h5{
+    font-size: 1.2em;
+}
+
+h6{
+    font-size: 1em;
+}
+
+p,ul, ol, dl, blockquote{
+    padding-bottom: 1.5em;
+}
+
+ul, ol{
+    padding-left: 1.5em;
+}
+
+li{
+    padding-bottom: 0.5em;
+}
+

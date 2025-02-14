@@ -1,0 +1,41 @@
+/* header */
+.site-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+}
+
+.site-logo{
+    display: flex;
+    align-items: baseline;
+    gap: 1em;
+    cursor: pointer;
+}
+
+.site-logo h1{
+    border-right: 1px solid #000;
+    padding-right: 1rem;
+}
+
+.site-nav ul{
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.1em;
+}
+
+.site-nav li{
+    display: block;
+    padding: 1.5rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    background-color: #ECECEC;
+    color: #696969;
+}
+
+li.active{    
+    background-color: #56DBB1;
+    color: #000;
+}
