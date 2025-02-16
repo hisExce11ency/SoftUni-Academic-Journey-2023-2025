@@ -1,0 +1,54 @@
+@media  (width <= 600px) {
+nav.nav{
+    padding-top: 1rem;
+}
+
+    .nav-burger-menu {
+        display: block;
+        font-size: 2.5rem;
+        color: white;
+        cursor: pointer;
+        order: -1;
+    }
+    .nav-menu {
+        display: none;
+    }
+    .nav-user-btns {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .nav-user-btns > li > button {
+        width: 100%;
+    }
+    .content-info {
+        flex-direction: column;
+        padding: 2rem;
+        text-align: center;
+    }
+    .content-info-welcome {
+        width: 100%;
+    }
+
+    .content-info-welcome h2 {
+        font-size: 4.5rem;
+    }
+
+    .content-info-welcome button {
+        width: 100%;
+    }
+
+    .content-info-img {
+        display: none;
+    }
+    .content-services {
+        flex-direction: column;
+    }
+    .content-services div {
+        width: 100%;
+    }
+    .gallery img {
+        width: 100%;
+        background: none;
+    }
+}
