@@ -1,0 +1,19 @@
+{
+    "name": "01-jsx-demo",
+    "version": "1.0.0",
+    "description": "",
+    "license": "ISC",
+    "author": "",
+    "type": "module",
+    "main": "index.js",
+    "scripts": {
+        "watch": "babel --watch src --out-dir dist --presets react-app/prod"
+         
+    },
+    "dependencies": {
+        "babel-cli": "^6.26.0",
+        "babel-preset-react-app": "^3.1.2",
+        "react": "^19.0.0",
+        "react-dom": "^19.0.0"
+    }
+}
