@@ -1,5 +1,7 @@
-# React Components Workshop @ SoftUni <img src="https://softuni.bg/Content/images/svg-logos/softuni-logo-white.svg" width="100" style="background-color:#61DAFB; padding:5px; border-radius:5px;">
+# React Components Workshop @ SoftUni
 
-This is a React Components Workshop as part of the React Course at SoftUni.
+<div style="display: inline-block; background-color: #61DAFB; padding: 5px; border-radius: 5px;">
+  <img src="https://softuni.bg/Content/images/svg-logos/softuni-logo-white.svg" width="100">
+</div>
 
-React <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" width="30">
+This is a React <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" width="30"> Components Workshop as part of the React Course at SoftUni.
