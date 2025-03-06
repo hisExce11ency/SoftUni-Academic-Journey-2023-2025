@@ -11,7 +11,7 @@ import UserDetails from "./UserDetails/UserDetails";
 export default function UserList() {
     const [users, setUsers] = useState([]);
     const [showCreate, setShowCreate] = useState(false);
-    const [userIdDetails, setUserIdDetails] = useState();
+    const [userIdDetails, setUserIdDetails] = useState(null);
 
     useEffect(() => {
         userService
@@ -53,6 +53,10 @@ export default function UserList() {
         setUserIdDetails(userId);
     };
 
+    const closeUserDetailsClickHandler = () => {
+        setUserIdDetails(null);
+    };
+
     return (
         <section className="card users-container">
             <Search />
@@ -63,7 +67,12 @@ export default function UserList() {
                 />
             )}
 
-            {userIdDetails && <UserDetails userId={userIdDetails} />}
+            {userIdDetails && (
+                <UserDetails
+                    userId={userIdDetails}
+                    onClose={closeUserDetailsClickHandler}
+                />
+            )}
 
             {/* <!-- Table component --> */}
             <div className="table-wrapper">
