@@ -30,11 +30,31 @@ export default function UserList() {
         setShowCreate(false);
     };
 
+    const saveCreateUserClikHandler = async (e) => {
+        //stop default behaviour(refresh)
+        e.preventDefault();
+        //get form data
+        const formData = new FormData(e.target);
+        const userData = Object.fromEntries(formData);
+
+        //send form data to backend service and create user on server
+        const newUser = await userService.create(userData);
+        //TODO error handling
+        //updtae local state
+        setUsers((users) => [...users, newUser]);
+
+        //close modal
+        setShowCreate(false);
+    };
+
     return (
         <section className="card users-container">
             <Search />
             {showCreate && (
-                <UserCreateEdit onClose={closeCreateUserClickHandler} />
+                <UserCreateEdit
+                    onClose={closeCreateUserClickHandler}
+                    onSave={saveCreateUserClikHandler}
+                />
             )}
 
             {/* <!-- Table component --> */}

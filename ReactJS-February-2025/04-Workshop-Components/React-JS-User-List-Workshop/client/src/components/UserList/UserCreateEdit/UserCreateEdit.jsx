@@ -1,7 +1,7 @@
 {
     /* <!-- Create/Edit Form component  --> */
 }
-export default function UserCreateEdit({ onClose }) {
+export default function UserCreateEdit({ onClose, onSave }) {
     return (
         <div className="overlay">
             <div className="backdrop" onClick={onClose}></div>
@@ -27,7 +27,7 @@ export default function UserCreateEdit({ onClose }) {
                             </svg>
                         </button>
                     </header>
-                    <form>
+                    <form onSubmit={onSave}>
                         <div className="form-row">
                             <div className="form-group">
                                 <label htmlFor="firstName">First name</label>
