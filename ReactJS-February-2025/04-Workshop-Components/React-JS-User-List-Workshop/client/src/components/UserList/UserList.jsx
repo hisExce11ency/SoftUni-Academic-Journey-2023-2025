@@ -14,6 +14,7 @@ export default function UserList() {
     const [showCreate, setShowCreate] = useState(false);
     const [userIdDetails, setUserIdDetails] = useState(null);
     const [userIdDelete, setUserIdDelete] = useState(null);
+    const [userIdEdit, setUserIdEdit] = useState(null);
 
     useEffect(() => {
         userService
@@ -32,13 +33,14 @@ export default function UserList() {
 
     const closeCreateUserClickHandler = () => {
         setShowCreate(false);
+        setUserIdEdit(null);
     };
 
     const saveCreateUserClikHandler = async (e) => {
         //stop default behaviour(refresh)
         e.preventDefault();
         //get form data
-        const formData = new FormData(e.target);
+        const formData = new FormData(e.target.parentElement.parentElement);
         const userData = Object.fromEntries(formData);
 
         //send form data to backend service and create user on server
@@ -83,6 +85,35 @@ export default function UserList() {
         }
     };
 
+    const userEditClickHandler = (userId) => {
+        setUserIdEdit(userId);
+    };
+
+    const saveEditUserClikHandler = async (e) => {
+        const userId = userIdEdit;
+        //stop default behaviour(refresh)
+        e.preventDefault();
+        //get form data
+        const formData = new FormData(e.target.parentElement.parentElement);
+        const userData = Object.fromEntries(formData);
+
+        //send form data to backend service and edit user on server
+        const editedUser = await userService.update(userId, userData);
+        //TODO error handling
+        //updtae local state
+        setUsers((users) =>
+            users.map((user) => {
+                if (user._id === editedUser._id) {
+                    return editedUser;
+                }
+                return user;
+            })
+        );
+
+        //close modal
+        setUserIdEdit(null);
+    };
+
     return (
         <section className="card users-container">
             <Search />
@@ -104,6 +135,15 @@ export default function UserList() {
                 <UserDelete
                     onClose={closeUserDeleteClickHandler}
                     onDelete={userDeleteHandler}
+                />
+            )}
+
+            {userIdEdit && (
+                <UserCreateEdit
+                    userId={userIdEdit}
+                    onClose={closeCreateUserClickHandler}
+                    onSave={saveCreateUserClikHandler}
+                    onEdit={saveEditUserClikHandler}
                 />
             )}
 
@@ -263,6 +303,7 @@ export default function UserList() {
                                 key={user._id}
                                 onInfoClick={userDetailsClickHandler}
                                 onDeleteClick={userDeleteClickHandler}
+                                onEditClick={userEditClickHandler}
                                 {...user}
                             />
                         ))}

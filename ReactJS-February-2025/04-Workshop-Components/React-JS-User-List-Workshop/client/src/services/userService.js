@@ -17,17 +17,7 @@ export default {
     },
 
     async create(userData) {
-        const { country, city, street, streetNumber, ...postData } = userData;
-
-        postData.address = {
-            country,
-            city,
-            street,
-            streetNumber
-        };
-        postData.createdAt = new Date().toISOString();
-        postData.updatedAt = new Date().toISOString();
-
+        const postData = transformUserData(userData);
 
         const response = await fetch(baseUrl, {
             method: 'POST',
@@ -46,6 +36,34 @@ export default {
         const result = await response.json();
         return result;
     },
+    async update(userId, userData) {
+        const existingUser = await this.getOne(userId); // Fetch existing user to keep `createdAt`
+        const putData = transformUserData({ ...existingUser, ...userData }, true); // Keep `createdAt`
+
+        const response = await fetch(`${baseUrl}/${userId}`, {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(putData),
+        });
+
+        return await response.json();
+    },
 
 }
 
+
+
+function transformUserData(userData, keepCreatedAt = false) {
+    const { country, city, street, streetNumber, createdAt, ...transformedData } = userData;
+
+    transformedData.address = { country, city, street, streetNumber };
+
+    if (!keepCreatedAt) {
+        transformedData.createdAt = new Date().toISOString();
+    } else if (createdAt) {
+        transformedData.createdAt = createdAt;
+    }
+
+    transformedData.updatedAt = new Date().toISOString();
+    return transformedData;
+}

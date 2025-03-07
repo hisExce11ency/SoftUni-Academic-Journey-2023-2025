@@ -1,14 +1,32 @@
+import { useEffect, useState } from "react";
+import userService from "../../../services/userService";
+
 {
     /* <!-- Create/Edit Form component  --> */
 }
-export default function UserCreateEdit({ onClose, onSave }) {
+export default function UserCreateEdit({ userId, onClose, onSave, onEdit }) {
+    const [user, setUser] = useState({});
+    useEffect(() => {
+        if (!userId) {
+            return;
+        }
+        userService
+            .getOne(userId)
+            .then((result) => {
+                setUser(result);
+            })
+            //TODO
+            .catch((error) => {
+                console.error(error);
+            });
+    }, [userId]);
     return (
         <div className="overlay">
             <div className="backdrop" onClick={onClose}></div>
             <div className="modal">
                 <div className="user-container">
                     <header className="headers">
-                        <h2>Edit User/Add User</h2>
+                        <h2>{userId ? "Edit" : "Add"} User</h2>
                         <button className="btn close" onClick={onClose}>
                             <svg
                                 aria-hidden="true"
@@ -27,7 +45,7 @@ export default function UserCreateEdit({ onClose, onSave }) {
                             </svg>
                         </button>
                     </header>
-                    <form onSubmit={onSave}>
+                    <form>
                         <div className="form-row">
                             <div className="form-group">
                                 <label htmlFor="firstName">First name</label>
@@ -39,6 +57,7 @@ export default function UserCreateEdit({ onClose, onSave }) {
                                         id="firstName"
                                         name="firstName"
                                         type="text"
+                                        defaultValue={user.firstName}
                                     />
                                 </div>
                             </div>
@@ -52,6 +71,7 @@ export default function UserCreateEdit({ onClose, onSave }) {
                                         id="lastName"
                                         name="lastName"
                                         type="text"
+                                        defaultValue={user.lastName}
                                     />
                                 </div>
                             </div>
@@ -68,6 +88,7 @@ export default function UserCreateEdit({ onClose, onSave }) {
                                         id="email"
                                         name="email"
                                         type="text"
+                                        defaultValue={user.email}
                                     />
                                 </div>
                             </div>
@@ -83,6 +104,7 @@ export default function UserCreateEdit({ onClose, onSave }) {
                                         id="phoneNumber"
                                         name="phoneNumber"
                                         type="text"
+                                        defaultValue={user.phoneNumber}
                                     />
                                 </div>
                             </div>
@@ -98,6 +120,7 @@ export default function UserCreateEdit({ onClose, onSave }) {
                                     id="imageUrl"
                                     name="imageUrl"
                                     type="text"
+                                    defaultValue={user.imageUrl}
                                 />
                             </div>
                         </div>
@@ -113,6 +136,7 @@ export default function UserCreateEdit({ onClose, onSave }) {
                                         id="country"
                                         name="country"
                                         type="text"
+                                        defaultValue={user.address?.country}
                                     />
                                 </div>
                             </div>
@@ -122,7 +146,12 @@ export default function UserCreateEdit({ onClose, onSave }) {
                                     <span>
                                         <i className="fa-solid fa-city"></i>
                                     </span>
-                                    <input id="city" name="city" type="text" />
+                                    <input
+                                        id="city"
+                                        name="city"
+                                        type="text"
+                                        defaultValue={user.address?.city}
+                                    />
                                 </div>
                             </div>
                         </div>
@@ -138,6 +167,7 @@ export default function UserCreateEdit({ onClose, onSave }) {
                                         id="street"
                                         name="street"
                                         type="text"
+                                        defaultValue={user.address?.street}
                                     />
                                 </div>
                             </div>
@@ -153,18 +183,33 @@ export default function UserCreateEdit({ onClose, onSave }) {
                                         id="streetNumber"
                                         name="streetNumber"
                                         type="text"
+                                        defaultValue={
+                                            user.address?.streetNumber
+                                        }
                                     />
                                 </div>
                             </div>
                         </div>
                         <div id="form-actions">
-                            <button
-                                id="action-save"
-                                className="btn"
-                                type="submit"
-                            >
-                                Save
-                            </button>
+                            {userId ? (
+                                <button
+                                    id="action-save"
+                                    className="btn"
+                                    type="submit"
+                                    onClick={onEdit}
+                                >
+                                    Edit
+                                </button>
+                            ) : (
+                                <button
+                                    id="action-save"
+                                    className="btn"
+                                    type="submit"
+                                    onClick={onSave}
+                                >
+                                    Save
+                                </button>
+                            )}
                             <button
                                 id="action-cancel"
                                 className="btn"
