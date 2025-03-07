@@ -7,11 +7,13 @@ import Search from "../Search/Search";
 import UserListItem from "./UserListItem/UserListItem";
 import UserCreateEdit from "./UserCreateEdit/UserCreateEdit";
 import UserDetails from "./UserDetails/UserDetails";
+import UserDelete from "./UserDelete/UserDelete";
 
 export default function UserList() {
     const [users, setUsers] = useState([]);
     const [showCreate, setShowCreate] = useState(false);
     const [userIdDetails, setUserIdDetails] = useState(null);
+    const [userIdDelete, setUserIdDelete] = useState(null);
 
     useEffect(() => {
         userService
@@ -57,6 +59,30 @@ export default function UserList() {
         setUserIdDetails(null);
     };
 
+    const userDeleteClickHandler = (userId) => {
+        setUserIdDelete(userId);
+    };
+
+    const closeUserDeleteClickHandler = () => {
+        setUserIdDelete(null);
+    };
+    const userDeleteHandler = async () => {
+        try {
+            //Delete reqwest to server
+            await userService.delete(userIdDelete);
+
+            //delete from local state
+            setUsers((users) =>
+                users.filter((user) => user._id !== userIdDelete)
+            );
+
+            //close modal
+            setUserIdDelete(null);
+        } catch (error) {
+            console.error(error); //TODO
+        }
+    };
+
     return (
         <section className="card users-container">
             <Search />
@@ -71,6 +97,13 @@ export default function UserList() {
                 <UserDetails
                     userId={userIdDetails}
                     onClose={closeUserDetailsClickHandler}
+                />
+            )}
+
+            {userIdDelete && (
+                <UserDelete
+                    onClose={closeUserDeleteClickHandler}
+                    onDelete={userDeleteHandler}
                 />
             )}
 
@@ -229,6 +262,7 @@ export default function UserList() {
                             <UserListItem
                                 key={user._id}
                                 onInfoClick={userDetailsClickHandler}
+                                onDeleteClick={userDeleteClickHandler}
                                 {...user}
                             />
                         ))}
