@@ -16,6 +16,9 @@ export default function UserList() {
     const [userIdDelete, setUserIdDelete] = useState(null);
     const [userIdEdit, setUserIdEdit] = useState(null);
 
+    const [currentPage, setCurrentPage] = useState(1);
+    const [usersPerPage, setUsersPerPage] = useState(5);
+
     useEffect(() => {
         userService
             .getAll()
@@ -27,6 +30,21 @@ export default function UserList() {
                 console.error(error);
             });
     }, []);
+
+    const indexOfLastUser = currentPage * usersPerPage;
+    const indexOfFirstUser = indexOfLastUser - usersPerPage;
+    const currentUsers = users.slice(indexOfFirstUser, indexOfLastUser);
+
+    const paginate = (pageNumber) => {
+        setCurrentPage(pageNumber);
+    };
+
+    const handleUsersPerPageChange = (e) => {
+        const selectedValue = Number(e.target.value);
+        console.log(selectedValue);
+        setUsersPerPage(selectedValue);
+        setCurrentPage(1);
+    };
     const createUserClickHandler = () => {
         setShowCreate(true);
     };
@@ -298,7 +316,7 @@ export default function UserList() {
                         </tr>
                     </thead>
                     <tbody>
-                        {users.map((user) => (
+                        {currentUsers.map((user) => (
                             <UserListItem
                                 key={user._id}
                                 onInfoClick={userDetailsClickHandler}
@@ -316,7 +334,15 @@ export default function UserList() {
                 Add new user
             </button>
 
-            <Pagination />
+            <Pagination
+                usersPerPage={usersPerPage}
+                totalUsers={users.length}
+                paginate={paginate}
+                currentPage={currentPage}
+                handleUsersPerPageChange={handleUsersPerPageChange}
+                indexOfFirstUser={indexOfFirstUser}
+                indexOfLastUser={indexOfLastUser}
+            />
         </section>
     );
 }

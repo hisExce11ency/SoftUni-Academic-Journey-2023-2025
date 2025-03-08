@@ -2,21 +2,47 @@
     /* <!-- Pagination component  --> */
 }
 
-export default function Pagination() {
+export default function Pagination({
+    usersPerPage,
+    totalUsers,
+    paginate,
+    currentPage,
+    handleUsersPerPageChange,
+    indexOfFirstUser,
+    indexOfLastUser,
+}) {
+    const pageNumbers = [];
+
+    for (let i = 1; i <= Math.ceil(totalUsers / usersPerPage); i++) {
+        pageNumbers.push(i);
+    }
     return (
         <div className="pagination position">
             <div className="limits">
                 <span>Items per page:</span>
-                <select name="limit" className="limit" defaultValue="5">
+                <select
+                    name="limit"
+                    className="limit"
+                    value={usersPerPage}
+                    onChange={handleUsersPerPageChange}
+                >
                     <option value="5">5</option>
-                    <option value="5">10</option>
-                    <option value="5">15</option>
-                    <option value="5">20</option>
+                    <option value="10">10</option>
+                    <option value="15">15</option>
+                    <option value="20">20</option>
                 </select>
             </div>
-            <p className="pages">1 - 1 of 1</p>
+            <p className="pages">
+                {indexOfFirstUser + 1} - {Math.min(indexOfLastUser, totalUsers)}{" "}
+                of {totalUsers}
+            </p>
             <div className="actions">
-                <button className="btn" title="First Page">
+                <button
+                    className="btn"
+                    title="First Page"
+                    onClick={() => paginate(1)}
+                    disabled={currentPage === 1}
+                >
                     <svg
                         aria-hidden="true"
                         focusable="false"
@@ -34,7 +60,12 @@ export default function Pagination() {
                     </svg>
                 </button>
 
-                <button className="btn" title="Previous Page">
+                <button
+                    className="btn"
+                    title="Previous Page"
+                    onClick={() => paginate(currentPage - 1)}
+                    disabled={currentPage === 1}
+                >
                     <svg
                         aria-hidden="true"
                         focusable="false"
@@ -51,7 +82,12 @@ export default function Pagination() {
                         ></path>
                     </svg>
                 </button>
-                <button className="btn" title="Next Page">
+                <button
+                    className="btn"
+                    title="Next Page"
+                    onClick={() => paginate(currentPage + 1)}
+                    disabled={currentPage === pageNumbers.length}
+                >
                     <svg
                         aria-hidden="true"
                         focusable="false"
@@ -69,7 +105,12 @@ export default function Pagination() {
                     </svg>
                 </button>
 
-                <button className="btn" title="Last Page">
+                <button
+                    className="btn"
+                    title="Last Page"
+                    onClick={() => paginate(pageNumbers.length)}
+                    disabled={currentPage === pageNumbers.length}
+                >
                     <svg
                         aria-hidden="true"
                         focusable="false"
