@@ -594,32 +594,6 @@ ul {
     }
 }
 
-/* Loading and error overlap components  */
-.loading-shade {
-    position: absolute;
-    top: 40px;
-    left: 0;
-    bottom: 0px;
-    right: 0;
-    z-index: 5;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.table-overlap {
-    text-align: center;
-    margin-right: 30px;
-}
-
-.loading-shade svg {
-    font-size: 5rem;
-    color: #943232;
-    height: 110px;
-    width: 120px;
-    margin: auto;
-}
-
 /* User details styles  */
 .detail-container {
     width: 100%;

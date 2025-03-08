@@ -1,0 +1,25 @@
+/* Loading and error overlap components  */
+.loadingShade {
+    position: absolute;
+    top: 40px;
+    left: 0;
+    bottom: 0px;
+    right: 0;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tableOverlap {
+    text-align: center;
+    margin-right: 30px;
+}
+
+.loadingShade svg {
+    font-size: 5rem;
+    color: #943232;
+    height: 110px;
+    width: 120px;
+    margin: auto;
+}

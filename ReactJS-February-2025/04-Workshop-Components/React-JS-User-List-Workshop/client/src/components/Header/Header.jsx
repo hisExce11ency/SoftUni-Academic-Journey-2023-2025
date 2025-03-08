@@ -7,7 +7,7 @@ export default function Header() {
         <header className={styles.header}>
             <div className={styles.logo}>
                 <span className={styles.description}>
-                    React Workshop - September 2023
+                    React Workshop - January 2024
                 </span>
             </div>
         </header>

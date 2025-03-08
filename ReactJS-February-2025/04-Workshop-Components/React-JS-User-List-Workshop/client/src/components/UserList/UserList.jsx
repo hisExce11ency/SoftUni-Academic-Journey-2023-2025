@@ -8,9 +8,11 @@ import UserListItem from "./UserListItem/UserListItem";
 import UserCreateEdit from "./UserCreateEdit/UserCreateEdit";
 import UserDetails from "./UserDetails/UserDetails";
 import UserDelete from "./UserDelete/UserDelete";
+import NoContentOverlap from "./NoContentOverlap/NoContentOverlap";
 
 export default function UserList() {
     const [users, setUsers] = useState([]);
+    const [filteredUsers, setFilteredUsers] = useState([]);
     const [showCreate, setShowCreate] = useState(false);
     const [userIdDetails, setUserIdDetails] = useState(null);
     const [userIdDelete, setUserIdDelete] = useState(null);
@@ -19,11 +21,15 @@ export default function UserList() {
     const [currentPage, setCurrentPage] = useState(1);
     const [usersPerPage, setUsersPerPage] = useState(5);
 
+    const [searchQuery, setSearchQuery] = useState("");
+    const [searchCriteria, setSearchCriteria] = useState("");
+
     useEffect(() => {
         userService
             .getAll()
             .then((result) => {
                 setUsers(result);
+                setFilteredUsers(result);
             })
             //TODO
             .catch((error) => {
@@ -31,9 +37,24 @@ export default function UserList() {
             });
     }, []);
 
+    useEffect(() => {
+        console.log("Search Query:", searchQuery);
+        console.log("Search Criteria:", searchCriteria);
+        const filtered = users.filter((user) => {
+            if (!searchQuery || !searchCriteria) return true;
+
+            const userValue = user[searchCriteria]?.toString().toLowerCase();
+            console.log("User Value:", userValue);
+            return userValue?.includes(searchQuery.toLowerCase());
+        });
+        console.log("Filtered Users:", filtered);
+        setFilteredUsers(filtered);
+        setCurrentPage(1);
+    }, [searchQuery, searchCriteria, users]);
+
     const indexOfLastUser = currentPage * usersPerPage;
     const indexOfFirstUser = indexOfLastUser - usersPerPage;
-    const currentUsers = users.slice(indexOfFirstUser, indexOfLastUser);
+    const currentUsers = filteredUsers.slice(indexOfFirstUser, indexOfLastUser);
 
     const paginate = (pageNumber) => {
         setCurrentPage(pageNumber);
@@ -44,6 +65,13 @@ export default function UserList() {
         console.log(selectedValue);
         setUsersPerPage(selectedValue);
         setCurrentPage(1);
+    };
+
+    const handleSearchQueryChange = (e) => {
+        setSearchQuery(e.target.value);
+    };
+    const handelSearchCriteriaChange = (e) => {
+        setSearchCriteria(e.target.value);
     };
     const createUserClickHandler = () => {
         setShowCreate(true);
@@ -134,7 +162,12 @@ export default function UserList() {
 
     return (
         <section className="card users-container">
-            <Search />
+            <Search
+                searchQuery={searchQuery}
+                onSearchQueryChange={handleSearchQueryChange}
+                searchCriteria={searchCriteria}
+                onSearchCriteriaChange={handelSearchCriteriaChange}
+            />
             {showCreate && (
                 <UserCreateEdit
                     onClose={closeCreateUserClickHandler}
@@ -169,7 +202,7 @@ export default function UserList() {
             <div className="table-wrapper">
                 <div className="overlays">
                     {/* <!-- Overlap components  --> */}
-
+                    {filteredUsers.length === 0 && <NoContentOverlap />}
                     {/* <!-- <div className="loading-shade"> --> */}
                     {/* <!-- Loading spinner  --> */}
                     {/* <!-- <div className="spinner"></div> --> */}
@@ -217,116 +250,117 @@ export default function UserList() {
 </div> --> */}
                     {/* <!-- </div> --> */}
                 </div>
-
-                <table className="table">
-                    <thead>
-                        <tr>
-                            <th>Image</th>
-                            <th>
-                                First name
-                                <svg
-                                    aria-hidden="true"
-                                    focusable="false"
-                                    data-prefix="fas"
-                                    data-icon="arrow-down"
-                                    className="icon svg-inline--fa fa-arrow-down Table_icon__+HHgn"
-                                    role="img"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    viewBox="0 0 384 512"
-                                >
-                                    <path
-                                        fill="currentColor"
-                                        d="M374.6 310.6l-160 160C208.4 476.9 200.2 480 192 480s-16.38-3.125-22.62-9.375l-160-160c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 370.8V64c0-17.69 14.33-31.1 31.1-31.1S224 46.31 224 64v306.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0S387.1 298.1 374.6 310.6z"
-                                    ></path>
-                                </svg>
-                            </th>
-                            <th>
-                                Last name
-                                <svg
-                                    aria-hidden="true"
-                                    focusable="false"
-                                    data-prefix="fas"
-                                    data-icon="arrow-down"
-                                    className="icon svg-inline--fa fa-arrow-down Table_icon__+HHgn"
-                                    role="img"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    viewBox="0 0 384 512"
-                                >
-                                    <path
-                                        fill="currentColor"
-                                        d="M374.6 310.6l-160 160C208.4 476.9 200.2 480 192 480s-16.38-3.125-22.62-9.375l-160-160c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 370.8V64c0-17.69 14.33-31.1 31.1-31.1S224 46.31 224 64v306.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0S387.1 298.1 374.6 310.6z"
-                                    ></path>
-                                </svg>
-                            </th>
-                            <th>
-                                Email
-                                <svg
-                                    className="icon svg-inline--fa fa-arrow-down Table_icon__+HHgn"
-                                    aria-hidden="true"
-                                    focusable="false"
-                                    data-prefix="fas"
-                                    data-icon="arrow-down"
-                                    role="img"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    viewBox="0 0 384 512"
-                                >
-                                    <path
-                                        fill="currentColor"
-                                        d="M374.6 310.6l-160 160C208.4 476.9 200.2 480 192 480s-16.38-3.125-22.62-9.375l-160-160c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 370.8V64c0-17.69 14.33-31.1 31.1-31.1S224 46.31 224 64v306.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0S387.1 298.1 374.6 310.6z"
-                                    ></path>
-                                </svg>
-                            </th>
-                            <th>
-                                Phone
-                                <svg
-                                    aria-hidden="true"
-                                    focusable="false"
-                                    data-prefix="fas"
-                                    data-icon="arrow-down"
-                                    className="icon svg-inline--fa fa-arrow-down Table_icon__+HHgn"
-                                    role="img"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    viewBox="0 0 384 512"
-                                >
-                                    <path
-                                        fill="currentColor"
-                                        d="M374.6 310.6l-160 160C208.4 476.9 200.2 480 192 480s-16.38-3.125-22.62-9.375l-160-160c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 370.8V64c0-17.69 14.33-31.1 31.1-31.1S224 46.31 224 64v306.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0S387.1 298.1 374.6 310.6z"
-                                    ></path>
-                                </svg>
-                            </th>
-                            <th>
-                                Created
-                                <svg
-                                    aria-hidden="true"
-                                    focusable="false"
-                                    data-prefix="fas"
-                                    data-icon="arrow-down"
-                                    className="icon active-icon svg-inline--fa fa-arrow-down Table_icon__+HHgn"
-                                    role="img"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    viewBox="0 0 384 512"
-                                >
-                                    <path
-                                        fill="currentColor"
-                                        d="M374.6 310.6l-160 160C208.4 476.9 200.2 480 192 480s-16.38-3.125-22.62-9.375l-160-160c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 370.8V64c0-17.69 14.33-31.1 31.1-31.1S224 46.31 224 64v306.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0S387.1 298.1 374.6 310.6z"
-                                    ></path>
-                                </svg>
-                            </th>
-                            <th>Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {currentUsers.map((user) => (
-                            <UserListItem
-                                key={user._id}
-                                onInfoClick={userDetailsClickHandler}
-                                onDeleteClick={userDeleteClickHandler}
-                                onEditClick={userEditClickHandler}
-                                {...user}
-                            />
-                        ))}
-                    </tbody>
-                </table>
+                {filteredUsers.length > 0 && (
+                    <table className="table">
+                        <thead>
+                            <tr>
+                                <th>Image</th>
+                                <th>
+                                    First name
+                                    <svg
+                                        aria-hidden="true"
+                                        focusable="false"
+                                        data-prefix="fas"
+                                        data-icon="arrow-down"
+                                        className="icon svg-inline--fa fa-arrow-down Table_icon__+HHgn"
+                                        role="img"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 384 512"
+                                    >
+                                        <path
+                                            fill="currentColor"
+                                            d="M374.6 310.6l-160 160C208.4 476.9 200.2 480 192 480s-16.38-3.125-22.62-9.375l-160-160c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 370.8V64c0-17.69 14.33-31.1 31.1-31.1S224 46.31 224 64v306.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0S387.1 298.1 374.6 310.6z"
+                                        ></path>
+                                    </svg>
+                                </th>
+                                <th>
+                                    Last name
+                                    <svg
+                                        aria-hidden="true"
+                                        focusable="false"
+                                        data-prefix="fas"
+                                        data-icon="arrow-down"
+                                        className="icon svg-inline--fa fa-arrow-down Table_icon__+HHgn"
+                                        role="img"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 384 512"
+                                    >
+                                        <path
+                                            fill="currentColor"
+                                            d="M374.6 310.6l-160 160C208.4 476.9 200.2 480 192 480s-16.38-3.125-22.62-9.375l-160-160c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 370.8V64c0-17.69 14.33-31.1 31.1-31.1S224 46.31 224 64v306.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0S387.1 298.1 374.6 310.6z"
+                                        ></path>
+                                    </svg>
+                                </th>
+                                <th>
+                                    Email
+                                    <svg
+                                        className="icon svg-inline--fa fa-arrow-down Table_icon__+HHgn"
+                                        aria-hidden="true"
+                                        focusable="false"
+                                        data-prefix="fas"
+                                        data-icon="arrow-down"
+                                        role="img"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 384 512"
+                                    >
+                                        <path
+                                            fill="currentColor"
+                                            d="M374.6 310.6l-160 160C208.4 476.9 200.2 480 192 480s-16.38-3.125-22.62-9.375l-160-160c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 370.8V64c0-17.69 14.33-31.1 31.1-31.1S224 46.31 224 64v306.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0S387.1 298.1 374.6 310.6z"
+                                        ></path>
+                                    </svg>
+                                </th>
+                                <th>
+                                    Phone
+                                    <svg
+                                        aria-hidden="true"
+                                        focusable="false"
+                                        data-prefix="fas"
+                                        data-icon="arrow-down"
+                                        className="icon svg-inline--fa fa-arrow-down Table_icon__+HHgn"
+                                        role="img"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 384 512"
+                                    >
+                                        <path
+                                            fill="currentColor"
+                                            d="M374.6 310.6l-160 160C208.4 476.9 200.2 480 192 480s-16.38-3.125-22.62-9.375l-160-160c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 370.8V64c0-17.69 14.33-31.1 31.1-31.1S224 46.31 224 64v306.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0S387.1 298.1 374.6 310.6z"
+                                        ></path>
+                                    </svg>
+                                </th>
+                                <th>
+                                    Created
+                                    <svg
+                                        aria-hidden="true"
+                                        focusable="false"
+                                        data-prefix="fas"
+                                        data-icon="arrow-down"
+                                        className="icon active-icon svg-inline--fa fa-arrow-down Table_icon__+HHgn"
+                                        role="img"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 384 512"
+                                    >
+                                        <path
+                                            fill="currentColor"
+                                            d="M374.6 310.6l-160 160C208.4 476.9 200.2 480 192 480s-16.38-3.125-22.62-9.375l-160-160c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 370.8V64c0-17.69 14.33-31.1 31.1-31.1S224 46.31 224 64v306.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0S387.1 298.1 374.6 310.6z"
+                                        ></path>
+                                    </svg>
+                                </th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {currentUsers.map((user) => (
+                                <UserListItem
+                                    key={user._id}
+                                    onInfoClick={userDetailsClickHandler}
+                                    onDeleteClick={userDeleteClickHandler}
+                                    onEditClick={userEditClickHandler}
+                                    {...user}
+                                />
+                            ))}
+                        </tbody>
+                    </table>
+                )}
             </div>
 
             {/* <!-- New user button  --> */}
@@ -336,7 +370,7 @@ export default function UserList() {
 
             <Pagination
                 usersPerPage={usersPerPage}
-                totalUsers={users.length}
+                totalUsers={filteredUsers.length}
                 paginate={paginate}
                 currentPage={currentPage}
                 handleUsersPerPageChange={handleUsersPerPageChange}
