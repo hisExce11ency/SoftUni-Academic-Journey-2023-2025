@@ -24,6 +24,9 @@ export default function UserList() {
     const [searchQuery, setSearchQuery] = useState("");
     const [searchCriteria, setSearchCriteria] = useState("");
 
+    const [sortCriteria, setSortCriteria] = useState("");
+    const [sortDirection, setSortDirection] = useState("asc");
+
     useEffect(() => {
         userService
             .getAll()
@@ -38,31 +41,46 @@ export default function UserList() {
     }, []);
 
     useEffect(() => {
-        console.log("Search Query:", searchQuery);
-        console.log("Search Criteria:", searchCriteria);
         const filtered = users.filter((user) => {
             if (!searchQuery || !searchCriteria) return true;
 
             const userValue = user[searchCriteria]?.toString().toLowerCase();
-            console.log("User Value:", userValue);
             return userValue?.includes(searchQuery.toLowerCase());
         });
-        console.log("Filtered Users:", filtered);
+
         setFilteredUsers(filtered);
         setCurrentPage(1);
     }, [searchQuery, searchCriteria, users]);
 
     const indexOfLastUser = currentPage * usersPerPage;
     const indexOfFirstUser = indexOfLastUser - usersPerPage;
-    const currentUsers = filteredUsers.slice(indexOfFirstUser, indexOfLastUser);
 
+    const sortedUsers = [...filteredUsers].sort((a, b) => {
+        if (a[sortCriteria] < b[sortCriteria]) {
+            return sortDirection === "asc" ? -1 : 1;
+        }
+        if (a[sortCriteria] > b[sortCriteria]) {
+            return sortDirection === "asc" ? 1 : -1;
+        }
+        return 0;
+    });
+
+    const currentUsers = sortedUsers.slice(indexOfFirstUser, indexOfLastUser);
+
+    const handleSort = (field) => {
+        if (sortCriteria === field) {
+            setSortDirection(sortDirection === "asc" ? "desc" : "asc");
+        } else {
+            setSortCriteria(field);
+            setSortDirection("asc");
+        }
+    };
     const paginate = (pageNumber) => {
         setCurrentPage(pageNumber);
     };
 
     const handleUsersPerPageChange = (e) => {
         const selectedValue = Number(e.target.value);
-        console.log(selectedValue);
         setUsersPerPage(selectedValue);
         setCurrentPage(1);
     };
@@ -202,14 +220,14 @@ export default function UserList() {
             <div className="table-wrapper">
                 <div className="overlays">
                     {/* <!-- Overlap components  --> */}
-                    {filteredUsers.length === 0 && <NoContentOverlap />}
-                    {/* <!-- <div className="loading-shade"> --> */}
-                    {/* <!-- Loading spinner  --> */}
-                    {/* <!-- <div className="spinner"></div> --> */}
-                    {/* <!--  */}
-                    {/* No users added yet  --> */}
+                    <div className="loading-shade">
+                        {filteredUsers.length === 0 && <NoContentOverlap />}
+                        {/* <!-- Loading spinner  --> */}
+                        {/* <!-- <div className="spinner"></div> --> */}
+                        {/* <!--  */}
+                        {/* No users added yet  --> */}
 
-                    {/* <div className="table-overlap">
+                        {/* <div className="table-overlap">
   <svg
     aria-hidden="true"
     focusable="false"
@@ -228,9 +246,9 @@ export default function UserList() {
   <h2>There is no users yet.</h2>
 </div>  */}
 
-                    {/* <!-- On error overlap component  --> */}
+                        {/* <!-- On error overlap component  --> */}
 
-                    {/* <!-- <div className="table-overlap">
+                        {/* <!-- <div className="table-overlap">
   <svg
     aria-hidden="true"
     focusable="false"
@@ -248,24 +266,39 @@ export default function UserList() {
   </svg>
   <h2>Failed to fetch</h2>
 </div> --> */}
-                    {/* <!-- </div> --> */}
+                    </div>
                 </div>
                 {filteredUsers.length > 0 && (
                     <table className="table">
                         <thead>
                             <tr>
                                 <th>Image</th>
-                                <th>
+                                <th onClick={() => handleSort("firstName")}>
                                     First name
                                     <svg
                                         aria-hidden="true"
                                         focusable="false"
                                         data-prefix="fas"
                                         data-icon="arrow-down"
-                                        className="icon svg-inline--fa fa-arrow-down Table_icon__+HHgn"
+                                        className={`icon svg-inline--fa fa-arrow-down Table_icon__+HHgn ${
+                                            sortCriteria === "firstName"
+                                                ? "active-icon"
+                                                : ""
+                                        }`}
                                         role="img"
                                         xmlns="http://www.w3.org/2000/svg"
                                         viewBox="0 0 384 512"
+                                        style={{
+                                            transform:
+                                                sortCriteria === "firstName" &&
+                                                sortDirection === "desc"
+                                                    ? "rotate(180deg)"
+                                                    : "none",
+                                            opacity:
+                                                sortCriteria === "firstName"
+                                                    ? 1
+                                                    : 0,
+                                        }}
                                     >
                                         <path
                                             fill="currentColor"
@@ -273,17 +306,32 @@ export default function UserList() {
                                         ></path>
                                     </svg>
                                 </th>
-                                <th>
+                                <th onClick={() => handleSort("lastName")}>
                                     Last name
                                     <svg
                                         aria-hidden="true"
                                         focusable="false"
                                         data-prefix="fas"
                                         data-icon="arrow-down"
-                                        className="icon svg-inline--fa fa-arrow-down Table_icon__+HHgn"
+                                        className={`icon svg-inline--fa fa-arrow-down Table_icon__+HHgn ${
+                                            sortCriteria === "lastName"
+                                                ? "active-icon"
+                                                : ""
+                                        }`}
                                         role="img"
                                         xmlns="http://www.w3.org/2000/svg"
                                         viewBox="0 0 384 512"
+                                        style={{
+                                            transform:
+                                                sortCriteria === "lastName" &&
+                                                sortDirection === "desc"
+                                                    ? "rotate(180deg)"
+                                                    : "none",
+                                            opacity:
+                                                sortCriteria === "lastName"
+                                                    ? 1
+                                                    : 0,
+                                        }}
                                     >
                                         <path
                                             fill="currentColor"
@@ -291,10 +339,14 @@ export default function UserList() {
                                         ></path>
                                     </svg>
                                 </th>
-                                <th>
+                                <th onClick={() => handleSort("email")}>
                                     Email
                                     <svg
-                                        className="icon svg-inline--fa fa-arrow-down Table_icon__+HHgn"
+                                        className={`icon svg-inline--fa fa-arrow-down Table_icon__+HHgn ${
+                                            sortCriteria === "email"
+                                                ? "active-icon"
+                                                : ""
+                                        }`}
                                         aria-hidden="true"
                                         focusable="false"
                                         data-prefix="fas"
@@ -302,6 +354,17 @@ export default function UserList() {
                                         role="img"
                                         xmlns="http://www.w3.org/2000/svg"
                                         viewBox="0 0 384 512"
+                                        style={{
+                                            transform:
+                                                sortCriteria === "email" &&
+                                                sortDirection === "desc"
+                                                    ? "rotate(180deg)"
+                                                    : "none",
+                                            opacity:
+                                                sortCriteria === "email"
+                                                    ? 1
+                                                    : 0,
+                                        }}
                                     >
                                         <path
                                             fill="currentColor"
@@ -309,17 +372,32 @@ export default function UserList() {
                                         ></path>
                                     </svg>
                                 </th>
-                                <th>
+                                <th onClick={() => handleSort("phone")}>
                                     Phone
                                     <svg
                                         aria-hidden="true"
                                         focusable="false"
                                         data-prefix="fas"
                                         data-icon="arrow-down"
-                                        className="icon svg-inline--fa fa-arrow-down Table_icon__+HHgn"
+                                        className={`icon svg-inline--fa fa-arrow-down Table_icon__+HHgn ${
+                                            sortCriteria === "phone"
+                                                ? "active-icon"
+                                                : ""
+                                        }`}
                                         role="img"
                                         xmlns="http://www.w3.org/2000/svg"
                                         viewBox="0 0 384 512"
+                                        style={{
+                                            transform:
+                                                sortCriteria === "phone" &&
+                                                sortDirection === "desc"
+                                                    ? "rotate(180deg)"
+                                                    : "none",
+                                            opacity:
+                                                sortCriteria === "phone"
+                                                    ? 1
+                                                    : 0,
+                                        }}
                                     >
                                         <path
                                             fill="currentColor"
@@ -327,17 +405,32 @@ export default function UserList() {
                                         ></path>
                                     </svg>
                                 </th>
-                                <th>
+                                <th onClick={() => handleSort("created")}>
                                     Created
                                     <svg
                                         aria-hidden="true"
                                         focusable="false"
                                         data-prefix="fas"
                                         data-icon="arrow-down"
-                                        className="icon active-icon svg-inline--fa fa-arrow-down Table_icon__+HHgn"
+                                        className={`icon svg-inline--fa fa-arrow-down Table_icon__+HHgn ${
+                                            sortCriteria === "created"
+                                                ? "active-icon"
+                                                : ""
+                                        }`}
                                         role="img"
                                         xmlns="http://www.w3.org/2000/svg"
                                         viewBox="0 0 384 512"
+                                        style={{
+                                            transform:
+                                                sortCriteria === "created" &&
+                                                sortDirection === "desc"
+                                                    ? "rotate(180deg)"
+                                                    : "none",
+                                            opacity:
+                                                sortCriteria === "created"
+                                                    ? 1
+                                                    : 0,
+                                        }}
                                     >
                                         <path
                                             fill="currentColor"
