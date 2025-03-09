@@ -55,17 +55,23 @@ export default function UserList() {
     const indexOfLastUser = currentPage * usersPerPage;
     const indexOfFirstUser = indexOfLastUser - usersPerPage;
 
-    const sortedUsers = [...filteredUsers].sort((a, b) => {
-        if (a[sortCriteria] < b[sortCriteria]) {
-            return sortDirection === "asc" ? -1 : 1;
-        }
-        if (a[sortCriteria] > b[sortCriteria]) {
-            return sortDirection === "asc" ? 1 : -1;
-        }
-        return 0;
-    });
+    const sortedIndexedUsers = [...filteredUsers]
+        .map((user, index) => ({ index, user }))
+        .sort((a, b) => {
+            if (a.user[sortCriteria] < b.user[sortCriteria]) {
+                return sortDirection === "asc" ? -1 : 1;
+            }
+            if (a.user[sortCriteria] > b.user[sortCriteria]) {
+                return sortDirection === "asc" ? 1 : -1;
+            }
+            return 0;
+        })
+        .map((item) => item.index);
 
-    const currentUsers = sortedUsers.slice(indexOfFirstUser, indexOfLastUser);
+    const currentUsers = sortedIndexedUsers
+
+        .slice(indexOfFirstUser, indexOfLastUser)
+        .map((index) => filteredUsers[index]);
 
     const handleSort = (field) => {
         if (sortCriteria === field) {
@@ -218,56 +224,59 @@ export default function UserList() {
 
             {/* <!-- Table component --> */}
             <div className="table-wrapper">
-                <div className="overlays">
-                    {/* <!-- Overlap components  --> */}
-                    <div className="loading-shade">
-                        {filteredUsers.length === 0 && <NoContentOverlap />}
-                        {/* <!-- Loading spinner  --> */}
-                        {/* <!-- <div className="spinner"></div> --> */}
-                        {/* <!--  */}
-                        {/* No users added yet  --> */}
+                {filteredUsers.length === 0 && (
+                    <div className="overlays">
+                        {/* <!-- Overlap components  --> */}
+                        <div className="loading-shade">
+                            <NoContentOverlap />
+                            {/* <!-- Loading spinner  --> */}
+                            {/* <!-- <div className="spinner"></div> --> */}
+                            {/* <!--  */}
+                            {/* No users added yet  --> */}
 
-                        {/* <div className="table-overlap">
+                            {/* <div className="table-overlap">
   <svg
-    aria-hidden="true"
-    focusable="false"
-    data-prefix="fas"
-    data-icon="triangle-exclamation"
-    className="svg-inline--fa fa-triangle-exclamation Table_icon__+HHgn"
-    role="img"
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 512 512"
+  aria-hidden="true"
+  focusable="false"
+  data-prefix="fas"
+  data-icon="triangle-exclamation"
+  className="svg-inline--fa fa-triangle-exclamation Table_icon__+HHgn"
+  role="img"
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 512 512"
   >
-    <path
-      fill="currentColor"
-      d="M506.3 417l-213.3-364c-16.33-28-57.54-28-73.98 0l-213.2 364C-10.59 444.9 9.849 480 42.74 480h426.6C502.1 480 522.6 445 506.3 417zM232 168c0-13.25 10.75-24 24-24S280 154.8 280 168v128c0 13.25-10.75 24-23.1 24S232 309.3 232 296V168zM256 416c-17.36 0-31.44-14.08-31.44-31.44c0-17.36 14.07-31.44 31.44-31.44s31.44 14.08 31.44 31.44C287.4 401.9 273.4 416 256 416z"
-    ></path>
+  <path
+  fill="currentColor"
+  d="M506.3 417l-213.3-364c-16.33-28-57.54-28-73.98 0l-213.2 364C-10.59 444.9 9.849 480 42.74 480h426.6C502.1 480 522.6 445 506.3 417zM232 168c0-13.25 10.75-24 24-24S280 154.8 280 168v128c0 13.25-10.75 24-23.1 24S232 309.3 232 296V168zM256 416c-17.36 0-31.44-14.08-31.44-31.44c0-17.36 14.07-31.44 31.44-31.44s31.44 14.08 31.44 31.44C287.4 401.9 273.4 416 256 416z"
+  ></path>
   </svg>
   <h2>There is no users yet.</h2>
-</div>  */}
+  </div>  */}
 
-                        {/* <!-- On error overlap component  --> */}
+                            {/* <!-- On error overlap component  --> */}
 
-                        {/* <!-- <div className="table-overlap">
+                            {/* <!-- <div className="table-overlap">
   <svg
-    aria-hidden="true"
-    focusable="false"
-    data-prefix="fas"
-    data-icon="triangle-exclamation"
-    className="svg-inline--fa fa-triangle-exclamation Table_icon__+HHgn"
-    role="img"
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 512 512"
+  aria-hidden="true"
+  focusable="false"
+  data-prefix="fas"
+  data-icon="triangle-exclamation"
+  className="svg-inline--fa fa-triangle-exclamation Table_icon__+HHgn"
+  role="img"
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 512 512"
   >
-    <path
-      fill="currentColor"
-      d="M506.3 417l-213.3-364c-16.33-28-57.54-28-73.98 0l-213.2 364C-10.59 444.9 9.849 480 42.74 480h426.6C502.1 480 522.6 445 506.3 417zM232 168c0-13.25 10.75-24 24-24S280 154.8 280 168v128c0 13.25-10.75 24-23.1 24S232 309.3 232 296V168zM256 416c-17.36 0-31.44-14.08-31.44-31.44c0-17.36 14.07-31.44 31.44-31.44s31.44 14.08 31.44 31.44C287.4 401.9 273.4 416 256 416z"
-    ></path>
+  <path
+  fill="currentColor"
+  d="M506.3 417l-213.3-364c-16.33-28-57.54-28-73.98 0l-213.2 364C-10.59 444.9 9.849 480 42.74 480h426.6C502.1 480 522.6 445 506.3 417zM232 168c0-13.25 10.75-24 24-24S280 154.8 280 168v128c0 13.25-10.75 24-23.1 24S232 309.3 232 296V168zM256 416c-17.36 0-31.44-14.08-31.44-31.44c0-17.36 14.07-31.44 31.44-31.44s31.44 14.08 31.44 31.44C287.4 401.9 273.4 416 256 416z"
+  ></path>
   </svg>
   <h2>Failed to fetch</h2>
-</div> --> */}
+  </div> --> */}
+                        </div>
                     </div>
-                </div>
+                )}
+
                 {filteredUsers.length > 0 && (
                     <table className="table">
                         <thead>
@@ -372,7 +381,7 @@ export default function UserList() {
                                         ></path>
                                     </svg>
                                 </th>
-                                <th onClick={() => handleSort("phone")}>
+                                <th onClick={() => handleSort("phoneNumber")}>
                                     Phone
                                     <svg
                                         aria-hidden="true"
@@ -380,7 +389,7 @@ export default function UserList() {
                                         data-prefix="fas"
                                         data-icon="arrow-down"
                                         className={`icon svg-inline--fa fa-arrow-down Table_icon__+HHgn ${
-                                            sortCriteria === "phone"
+                                            sortCriteria === "phoneNumber"
                                                 ? "active-icon"
                                                 : ""
                                         }`}
@@ -389,12 +398,13 @@ export default function UserList() {
                                         viewBox="0 0 384 512"
                                         style={{
                                             transform:
-                                                sortCriteria === "phone" &&
+                                                sortCriteria ===
+                                                    "phoneNumber" &&
                                                 sortDirection === "desc"
                                                     ? "rotate(180deg)"
                                                     : "none",
                                             opacity:
-                                                sortCriteria === "phone"
+                                                sortCriteria === "phoneNumber"
                                                     ? 1
                                                     : 0,
                                         }}
@@ -405,7 +415,7 @@ export default function UserList() {
                                         ></path>
                                     </svg>
                                 </th>
-                                <th onClick={() => handleSort("created")}>
+                                <th onClick={() => handleSort("createdAt")}>
                                     Created
                                     <svg
                                         aria-hidden="true"
@@ -413,7 +423,7 @@ export default function UserList() {
                                         data-prefix="fas"
                                         data-icon="arrow-down"
                                         className={`icon svg-inline--fa fa-arrow-down Table_icon__+HHgn ${
-                                            sortCriteria === "created"
+                                            sortCriteria === "createdAt"
                                                 ? "active-icon"
                                                 : ""
                                         }`}
@@ -422,12 +432,12 @@ export default function UserList() {
                                         viewBox="0 0 384 512"
                                         style={{
                                             transform:
-                                                sortCriteria === "created" &&
+                                                sortCriteria === "createdAt" &&
                                                 sortDirection === "desc"
                                                     ? "rotate(180deg)"
                                                     : "none",
                                             opacity:
-                                                sortCriteria === "created"
+                                                sortCriteria === "createdAt"
                                                     ? 1
                                                     : 0,
                                         }}
