@@ -9,6 +9,7 @@ const wait = (time) => {
     });
 };
 
+//don't do this juat learn what is ref !
 export default function UncontroledFormRef() {
     // const [pending, setPending] = useState(false);
     const submitRef = useRef();

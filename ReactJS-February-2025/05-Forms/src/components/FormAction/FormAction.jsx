@@ -1,4 +1,5 @@
-import { useState } from "react";
+// import { useState } from "react";
+import SubmitButton from "./SubmitButton";
 
 const wait = (time) => {
     return new Promise((resolve) => {
@@ -8,36 +9,40 @@ const wait = (time) => {
     });
 };
 
-export default function UncontroledForm() {
-    const [pending, setPending] = useState(false);
-    const submitHendler = async (e) => {
-        //set pending status
-        setPending(true);
-        //prevent default behaviour  - refresh
-        e.preventDefault();
-        //get form data drom DOM
-        const formData = new FormData(e.currentTarget);
+export default function FormAction() {
+    // const [pending, setPending] = useState(false);
+    const submitAction = async (formData) => {
+        // //set pending status
+        // setPending(true);
+        // //prevent default behaviour  - refresh
+        // e.preventDefault();
+        // //get form data drom DOM
+        // const formData = new FormData(e.currentTarget);
         //get form values
         const username = formData.get("username");
         const email = formData.get("email");
         const password = formData.get("password");
         //call rest api
         await wait(1500);
-        //Remove pending status
-        setPending(false);
-        //clear form !
-        e.target.reset();
+        // //Remove pending status
+        // setPending(false);
         //Result
         console.log({ username, email, password });
     };
+
+    // const formActionHandler = (formData) => {
+    //     console.log(formData.get("username"));
+    //     console.log("form action executed");
+    // };
+
     return (
         <div className="flex items-center justify-center min-h-screen bg-gray-100">
             <div className="w-full max-w-md p-6 bg-white rounded-lg shadow-lg">
                 <h2 className="text-2xl font-semibold text-center text-gray-700 mb-6">
-                    Uncontrolled Form
+                    Form Action
                 </h2>
 
-                <form action="" onSubmit={submitHendler} className="space-y-6">
+                <form action={submitAction} className="space-y-6">
                     <div>
                         <label
                             htmlFor="username"
@@ -50,7 +55,6 @@ export default function UncontroledForm() {
                             name="username"
                             id="username"
                             placeholder="Username"
-                            // defaultValue="username"
                             className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                         />
                     </div>
@@ -82,16 +86,7 @@ export default function UncontroledForm() {
                             className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                         />
                     </div>
-                    <input
-                        type="submit"
-                        value="Login"
-                        disabled={pending}
-                        className={`w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 ${
-                            pending
-                                ? "opacity-50 cursor-wait"
-                                : "hoover:bg-indigo-700"
-                        }`}
-                    />
+                    <SubmitButton />
                 </form>
             </div>
         </div>
