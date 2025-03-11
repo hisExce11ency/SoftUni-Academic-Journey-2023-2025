@@ -10,6 +10,7 @@ const wait = (time) => {
 
 export default function UnifiedControledForm() {
     const [pending, setPending] = useState(false);
+    //set initial form values by imput names
     const [values, setValues] = useState({
         username: "",
         email: "",

@@ -1,6 +1,7 @@
 import ControledForm from "./components/ControledForm";
 import UncontroledForm from "./components/UncontroledForm";
 import UnifiedControledForm from "./components/UnifiedControledForm";
+import UserRef from "./components/UseRef";
 
 function App() {
     return (
@@ -8,6 +9,7 @@ function App() {
             <UncontroledForm />
             <ControledForm />
             <UnifiedControledForm />
+            <UserRef />
         </>
     );
 }
