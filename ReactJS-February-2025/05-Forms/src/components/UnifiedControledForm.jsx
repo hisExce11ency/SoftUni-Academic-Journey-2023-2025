@@ -10,7 +10,12 @@ const wait = (time) => {
 
 export default function UnifiedControledForm() {
     const [pending, setPending] = useState(false);
-    const [values, setValues] = useState({});
+    const [values, setValues] = useState({
+        username: "",
+        email: "",
+        password: "",
+        rememberMe: false,
+    });
     const submitHendler = async (e) => {
         //set pending status
         setPending(true);
@@ -62,7 +67,7 @@ export default function UnifiedControledForm() {
                             type="text"
                             name="username"
                             id="username"
-                            value={values.username ?? ""}
+                            value={values.username}
                             onChange={changeVluesHandler}
                             className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                         />
@@ -78,7 +83,7 @@ export default function UnifiedControledForm() {
                             type="email"
                             name="email"
                             id="email"
-                            value={values.email || ""}
+                            value={values.email}
                             onChange={changeVluesHandler}
                             className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                         />
@@ -94,7 +99,7 @@ export default function UnifiedControledForm() {
                             type="password"
                             name="password"
                             id="password"
-                            value={values.password ?? ""}
+                            value={values.password}
                             onChange={changeVluesHandler}
                             className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                         />
@@ -104,7 +109,7 @@ export default function UnifiedControledForm() {
                             type="checkbox"
                             name="rememberMe"
                             id="rememberMe"
-                            checked={values.rememberMe ?? false}
+                            checked={values.rememberMe}
                             onChange={changeVluesHandler}
                             className="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded"
                         />
