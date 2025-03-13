@@ -2,10 +2,11 @@ import "./App.css";
 
 import { Route, Routes } from "react-router";
 
-import Home from "./components/Home";
 import Header from "./components/Header";
-import Contacts from "./components/Contacts";
+import Home from "./components/Home";
 import Pricing from "./components/Pricing";
+import Products from "./components/Poducts";
+import Contacts from "./components/Contacts";
 import NotFound from "./components/NotFound";
 
 function App() {
@@ -15,7 +16,7 @@ function App() {
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/pricing" element={<Pricing />} />
-                <Route path="/catalog" element={<h1>Catalog</h1>} />
+                <Route path="/catalog" element={<Products />} />
                 <Route path="/contacts" element={<Contacts />} />
                 <Route path="*" element={<NotFound />} />
             </Routes>
