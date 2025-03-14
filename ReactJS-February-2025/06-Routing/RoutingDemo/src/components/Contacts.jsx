@@ -1,11 +1,21 @@
 "use client";
 
 import { useState } from "react";
+import { useNavigate } from "react-router";
+
 import { ChevronDownIcon } from "@heroicons/react/16/solid";
 import { Field, Label, Switch } from "@headlessui/react";
 
 export default function Contacts() {
     const [agreed, setAgreed] = useState(false);
+    const navigate = useNavigate();
+    const formAction = (FormData) => {
+        console.log(Object.fromEntries(FormData));
+
+        console.log("Sending the contact information...");
+
+        navigate("/");
+    };
 
     return (
         <div className="isolate bg-white px-6 py-24 sm:py-32 lg:px-8">
@@ -31,8 +41,7 @@ export default function Contacts() {
                 </p>
             </div>
             <form
-                action="#"
-                method="POST"
+                action={formAction}
                 className="mx-auto mt-16 max-w-xl sm:mt-20"
             >
                 <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
