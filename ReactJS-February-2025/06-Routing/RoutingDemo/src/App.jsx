@@ -8,6 +8,7 @@ import Pricing from "./components/Pricing";
 import Products from "./components/Poducts";
 import Contacts from "./components/Contacts";
 import NotFound from "./components/NotFound";
+import ProductDetails from "./components/ProductDetails";
 
 function App() {
     return (
@@ -17,6 +18,10 @@ function App() {
                 <Route path="/" element={<Home />} />
                 <Route path="/pricing" element={<Pricing />} />
                 <Route path="/catalog" element={<Products />} />
+                <Route
+                    path="/catalog/:productId"
+                    element={<ProductDetails />}
+                />
                 <Route path="/contacts" element={<Contacts />} />
                 <Route path="*" element={<NotFound />} />
             </Routes>
