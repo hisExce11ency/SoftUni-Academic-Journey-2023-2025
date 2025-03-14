@@ -28,11 +28,17 @@ export default function ProductDetails() {
     const [product, setProduct] = useState({});
 
     useEffect(() => {
-        fetch(`https://fakestoreapi.com/products/${productId}`)
+        const abortController = new AbortController();
+        fetch(`https://fakestoreapi.com/products/${productId}`, {
+            signal: abortController.signal,
+        })
             .then((res) => res.json())
             .then((result) => {
                 setProduct(result);
             });
+        return () => {
+            abortController.abort();
+        };
     }, [productId]);
 
     return (

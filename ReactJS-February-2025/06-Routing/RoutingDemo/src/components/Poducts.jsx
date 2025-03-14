@@ -57,15 +57,22 @@ export default function Catalog() {
     // console.log(displayProducts);
 
     useEffect(() => {
-        fetch("https://fakestoreapi.com/products")
+        const abortController = new AbortController();
+        fetch("https://fakestoreapi.com/products", {
+            signal: abortController.signal,
+        })
             .then((res) => res.json())
             .then((result) => {
                 setProducts(result);
             });
+        return () => {
+            abortController.abort();
+        };
     }, []);
 
     useEffect(() => {
         const filter = Object.fromEntries(search);
+
         if (filter.sortBy) {
             setDisplayProducts(
                 [...products].sort((p1, p2) =>
