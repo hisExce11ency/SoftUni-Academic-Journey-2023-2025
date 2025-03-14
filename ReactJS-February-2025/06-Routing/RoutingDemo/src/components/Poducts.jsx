@@ -1,5 +1,8 @@
 import { useEffect, useState } from "react";
+import { useSearchParams } from "react-router";
+
 import Product from "./Product";
+import SortOrFilter from "./SortOrFilter";
 
 // const products = [
 //     {
@@ -46,7 +49,13 @@ import Product from "./Product";
 // ];
 
 export default function Catalog() {
+    const [search, setSearch] = useSearchParams();
+    // console.log(Object.fromEntries(search));
+
     const [products, setProducts] = useState([]);
+    const [displayProducts, setDisplayProducts] = useState([]);
+    // console.log(displayProducts);
+
     useEffect(() => {
         fetch("https://fakestoreapi.com/products")
             .then((res) => res.json())
@@ -54,8 +63,31 @@ export default function Catalog() {
                 setProducts(result);
             });
     }, []);
+
+    useEffect(() => {
+        const filter = Object.fromEntries(search);
+        if (filter.sortBy) {
+            setDisplayProducts(
+                [...products].sort((p1, p2) =>
+                    filter.dir === "asc"
+                        ? p1.price - p2.price
+                        : p2.price - p1.price
+                )
+            );
+        } else if (filter.top) {
+            setDisplayProducts(products.filter((el) => el.rating?.rate > 4));
+        } else if (filter.popular) {
+            setDisplayProducts(
+                products.filter((el) => el.rating?.count >= 100)
+            );
+        } else {
+            setDisplayProducts([...products]);
+        }
+    }, [products, search]);
+
     return (
         <div className="isolate bg-white px-6 py-24 sm:py-32 lg:px-8">
+            <SortOrFilter />
             <div
                 aria-hidden="true"
                 className="absolute inset-x-0 top-[-10rem] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[-20rem]"
@@ -74,7 +106,7 @@ export default function Catalog() {
 
             <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8 text-center">
                 <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
-                    {products.map((product) => (
+                    {displayProducts.map((product) => (
                         <Product key={product.id} product={product} />
                     ))}
                 </div>
