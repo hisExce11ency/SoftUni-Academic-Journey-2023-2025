@@ -186,7 +186,7 @@ export default function ProductDetails() {
                 {/* Description and details */}
                 <div className="mx-auto max-w-2xl px-4 pt-10 pb-16 sm:px-6 lg:max-w-7xl lg:px-8 lg:pt-16 lg:pb-24">
                     <div>
-                        <h3 className="sr-only">Description</h3>
+                        <h3 className="font-normal text-lg">Description:</h3>
                         <div className="space-y-6">
                             <p className="text-base text-gray-900">
                                 {product.description}
