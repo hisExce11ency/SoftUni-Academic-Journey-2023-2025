@@ -38,5 +38,13 @@
         "imageUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/6/67/Counter-Strike_Box.jpg/220px-Counter-Strike_Box.jpg",
         "summary": "Counter-Strike (CS) is a series of multiplayer tactical first-person shooter video games, in which opposing teams attempt to complete various objectives. The series began on Windows in 1999 with the release of the first game, Counter-Strike.",
         "_id": "5b5b40bf-a066-46e9-8e02-df0883ac386e"
+    },
+    "fa7a4ff9-5e19-462a-af9c-37250146915c": {
+        "title": "Need for Speed: Underground 2 ",
+        "category": "Racing",
+        "maxLevel": "789",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/1/10/Nfsu2-win-cover.jpg/220px-Nfsu2-win-cover.jpg",
+        "summary": "Need for Speed: Underground 2 is a 2004 racing video game developed by EA Black Box and published by Electronic Arts.The game entails tuning cars for street races, resuming the Need for Speed: Underground storyline. Need for Speed: Underground 2 provides several new features, such as broader customization, new methods of selecting races, set in a city known as Bayview.",
+        "_id": "fa7a4ff9-5e19-462a-af9c-37250146915c"
     }
 }

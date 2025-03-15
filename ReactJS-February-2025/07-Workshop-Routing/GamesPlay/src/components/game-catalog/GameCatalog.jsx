@@ -1,6 +1,6 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+
 import gameService from "../../services/gameService";
-import { useState } from "react";
 import GameCatalogItem from "./game-catalog-item/GameCatalogItem";
 
 {
@@ -11,7 +11,7 @@ import GameCatalogItem from "./game-catalog-item/GameCatalogItem";
 export default function GameCatalog() {
     const [games, setGames] = useState([]);
     useEffect(() => {
-        gameService.getAll().then(setGames);
+        // gameService.getAll().then(setGames);
         // .then((result) => {
         //     setGames(result);
         // console.log(result);
@@ -23,14 +23,25 @@ export default function GameCatalog() {
             {/*
     <!-- Display div: with information about every game (if any) -->
     */}
-            {games.map((game) => (
+            {/* {games.map((game) => (
                 <GameCatalogItem key={game._id} {...game} />
-            ))}
+            ))} */}
 
             {/*
     <!-- Display paragraph: If there is no games  -->
     */}
-            <h3 className="no-articles">No articles yet</h3>
+
+            {/* {games.lenght === 0 && (
+                <h3 className="no-articles">No articles yet</h3>
+            )} */}
+
+            {games.length > 0 ? (
+                games.map((game) => (
+                    <GameCatalogItem key={game._id} {...game} />
+                ))
+            ) : (
+                <h3 className="no-articles">No Games yet !</h3>
+            )}
         </section>
     );
 }
