@@ -30,7 +30,7 @@ export default function Login() {
                     <p className="field">
                         <span>
                             If you don't have profile click
-                            <Link href="/register">here</Link>
+                            <Link to="/register">here</Link>
                         </span>
                     </p>
                 </div>
