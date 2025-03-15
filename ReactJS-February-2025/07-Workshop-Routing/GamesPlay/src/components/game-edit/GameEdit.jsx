@@ -1,7 +1,6 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router";
 import gameService from "../../services/gameService";
-import { useState } from "react";
 
 {
     /*
@@ -18,9 +17,17 @@ export default function GameEdit() {
         //
     }, [gameId]);
 
+    const formAction = async (formData) => {
+        const gameData = Object.fromEntries(formData);
+
+        await gameService.edit(gameId, gameData);
+
+        navigate(`/games/${gameId}/details`);
+    };
+
     return (
         <section id="edit-page" className="auth">
-            <form id="edit">
+            <form id="edit" action={formAction}>
                 <div className="container">
                     <h1>Edit Game</h1>
                     <label htmlFor="leg-title">Legendary title:</label>
