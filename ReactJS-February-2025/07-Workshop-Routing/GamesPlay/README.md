@@ -8,7 +8,7 @@ WE are assigned to implement a Web application (SPA). The application should dyn
 
 ### Client
 
-1.Overview
+1.`#0969DA`Overview
 
 Implement a front-end application (SPA) to see and manage the game world. The app allows visitors to browse different types of games, including the latest collections, with different levels of difficulty. Users can register with an email and password, which allows them to create their own games. Game authors can also edit or delete their own posts at any time.
 
@@ -40,7 +40,7 @@ Content-Type: application/json
 {JSON-encoded request body as described in the application requirements}
 ```
 
-To perform an authenticated request, include an X-Authorization header, set to the value of the session token, returned by an earlier login or register request:
+To perform an authenticated request, include an **X-Authorization** header, set to the value of the session token, returned by an earlier login or register request:
 
 ```
 X-Authorization: {session token}
