@@ -1,0 +1,42 @@
+{
+    "82fd83a8-faa9-47ab-b991-64e23e4242fa": {
+        "title": "Cover Fire",
+        "category": "Action",
+        "maxLevel": "26",
+        "imageUrl": "https://m.media-amazon.com/images/I/81SBDJClqlL._h1_.png",
+        "summary": "Cover Fire, is one of the best shooting games you’ll ever play on a mobile, now for free and offline.",
+        "_id": "82fd83a8-faa9-47ab-b991-64e23e4242fa"
+    },
+    "2f5527b5-3cc5-4d5a-83e7-bc7177fa1596": {
+        "title": "Contra",
+        "category": "Run and Gun - Arcade",
+        "maxLevel": "200",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/6/65/Contra_cover.jpg/220px-Contra_cover.jpg",
+        "summary": "Contra is a 1987 run and gun video game developed and published by Konami for arcades.\n\nThe arcade game was a commercial success worldwide, becoming one of the top four highest-grossing dedicated arcade games of 1987 in the United States. The NES version was also a critical and commercial success, with Electronic Gaming Monthly awarding it for being the Best Action Game of 1988. Several Contra sequels were produced following the original game.",
+        "_id": "2f5527b5-3cc5-4d5a-83e7-bc7177fa1596"
+    },
+    "bde2043e-8029-4fae-b417-6cb5846b75a0": {
+        "title": "Sniper: Ghost Warrior",
+        "category": "FPS",
+        "maxLevel": "50",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/en/5/5e/Sniper_Ghost_Warrior.jpg",
+        "summary": "Sniper: Ghost Warrior is a tactical shooter video game developed and published by City Interactive",
+        "_id": "bde2043e-8029-4fae-b417-6cb5846b75a0"
+    },
+    "81da32f0-8c54-465d-a5f2-e649bf56da5a": {
+        "title": "Resident Evil (1996 video game)",
+        "category": "TPS, FPS",
+        "maxLevel": "10",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/en/a/a6/Resident_Evil_1_cover.png",
+        "summary": "Resident Evil, known as Biohazard (バイオハザード, Baiohazādo) in Japan, is a Japanese horror game series and media franchise created by Capcom. It consists of survival horror, third-person shooter and first-person shooter games, with players typically surviving in environments inhabited by zombies and other mutated creatures.",
+        "_id": "81da32f0-8c54-465d-a5f2-e649bf56da5a"
+    },
+    "5b5b40bf-a066-46e9-8e02-df0883ac386e": {
+        "title": "Counter-Strike (CS)",
+        "category": "FPS",
+        "maxLevel": "66",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/6/67/Counter-Strike_Box.jpg/220px-Counter-Strike_Box.jpg",
+        "summary": "Counter-Strike (CS) is a series of multiplayer tactical first-person shooter video games, in which opposing teams attempt to complete various objectives. The series began on Windows in 1999 with the release of the first game, Counter-Strike.",
+        "_id": "5b5b40bf-a066-46e9-8e02-df0883ac386e"
+    }
+}
