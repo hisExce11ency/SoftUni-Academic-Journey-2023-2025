@@ -32,8 +32,7 @@ export default function Home() {
                     </div>
                     <div className="data-buttons">
                         <a href="#" className="btn details-btn">
-                            {" "}
-                            Details{" "}
+                            Details
                         </a>
                     </div>
                 </div>
@@ -51,8 +50,7 @@ export default function Home() {
                     </div>
                     <div className="data-buttons">
                         <a href="#" className="btn details-btn">
-                            {" "}
-                            Details{" "}
+                            Details
                         </a>
                     </div>
                 </div>
@@ -70,8 +68,7 @@ export default function Home() {
                     </div>
                     <div className="data-buttons">
                         <a href="#" className="btn details-btn">
-                            {" "}
-                            Details{" "}
+                            Details
                         </a>
                     </div>
                 </div>
