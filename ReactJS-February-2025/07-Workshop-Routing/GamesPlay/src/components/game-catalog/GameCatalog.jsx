@@ -11,7 +11,7 @@ import GameCatalogItem from "./game-catalog-item/GameCatalogItem";
 export default function GameCatalog() {
     const [games, setGames] = useState([]);
     useEffect(() => {
-        // gameService.getAll().then(setGames);
+        gameService.getAll().then(setGames);
         // .then((result) => {
         //     setGames(result);
         // console.log(result);
