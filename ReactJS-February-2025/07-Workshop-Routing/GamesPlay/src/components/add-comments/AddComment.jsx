@@ -10,7 +10,7 @@ import commentService from "../../services/commentService";
     <!-- Add Comment ( Only for logged-in users, which is not creators of the current game ) -->
     */
 }
-export default function AddComent({ email, gameId }) {
+export default function AddComent({ email, gameId, onCreate }) {
     const commentAction = async (formData) => {
         const comment = formData.get("comment");
 
@@ -20,7 +20,7 @@ export default function AddComent({ email, gameId }) {
             comment
         );
 
-        console.log(createdComment);
+        onCreate(createdComment);
     };
 
     return (

@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router";
 import gameService from "../../services/gameService";
-import DisplayComents from "../comments-display/DisplayComments";
+import DisplayComments from "../comments-display/DisplayComments";
 import AddComent from "../add-comments/AddComment";
+import commentService from "../../services/commentService";
 
 {
     /*
@@ -11,15 +12,18 @@ import AddComent from "../add-comments/AddComment";
 }
 export default function GameDetails({ email }) {
     const navigate = useNavigate();
-    const [game, setgame] = useState({});
+    const [game, setGame] = useState({});
+    const [comments, setComments] = useState([]);
     const { gameId } = useParams();
 
     useEffect(() => {
         //Immediately Invoked async arrow function expression
-        (async () => {
-            const result = await gameService.getOne(gameId);
-            setgame(result);
-        })();
+        // (async () => {
+        // const result = await
+        gameService.getOne(gameId).then(setGame);
+        // setGame(result);
+        // })();
+        commentService.getAll(gameId).then(setComments);
     }, [gameId]);
     const gameDeleteClickHandler = async () => {
         const hasConfirm = confirm(
@@ -31,6 +35,11 @@ export default function GameDetails({ email }) {
         await gameService.delete(gameId);
         navigate("/games");
     };
+
+    const commentCreateHandler = (newComent) => {
+        setComments((state) => [...state, newComent]);
+    };
+
     return (
         <section id="game-details">
             <h1>Game Details</h1>
@@ -44,7 +53,7 @@ export default function GameDetails({ email }) {
 
                 <p className="text">{game.summary}</p>
 
-                <DisplayComents />
+                <DisplayComments comments={comments} />
 
                 {/*
         <!-- Edit/Delete buttons ( Only for creator of this game )  -->
@@ -58,7 +67,11 @@ export default function GameDetails({ email }) {
                     </button>
                 </div>
             </div>
-            <AddComent email={email} gameId={gameId} />
+            <AddComent
+                email={email}
+                gameId={gameId}
+                onCreate={commentCreateHandler}
+            />
         </section>
     );
 }
