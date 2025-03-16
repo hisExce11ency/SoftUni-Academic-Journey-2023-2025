@@ -9,7 +9,7 @@ import AddComent from "../add-comments/AddComment";
 <!--Details Page-->
 */
 }
-export default function GameDetails() {
+export default function GameDetails({ email }) {
     const navigate = useNavigate();
     const [game, setgame] = useState({});
     const { gameId } = useParams();
@@ -58,7 +58,7 @@ export default function GameDetails() {
                     </button>
                 </div>
             </div>
-            <AddComent />
+            <AddComent email={email} />
         </section>
     );
 }
