@@ -58,7 +58,7 @@ export default function GameDetails({ email }) {
                     </button>
                 </div>
             </div>
-            <AddComent email={email} />
+            <AddComent email={email} gameId={gameId} />
         </section>
     );
 }
